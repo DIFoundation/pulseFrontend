@@ -15,8 +15,8 @@ const Step0_CategorySelection: React.FC = () => {
 		{ key: "others", title: "Others", icon: <Grid className="w-6 h-6" /> },
 	]
 
-	const onSelectType = (type: string) => {
-		handleFormChange("marketType", type)
+	const onSelectCategory = (category: string) => {
+		handleFormChange("marketCategory", category)
 	}
 
 	return (
@@ -27,8 +27,8 @@ const Step0_CategorySelection: React.FC = () => {
 						key={type.key}
 						icon={type.icon}
 						title={type.title}
-						isSelected={formData.marketType === type.key}
-						onClick={() => onSelectType(type.key)}
+						isSelected={formData.marketCategory === type.key}
+						onClick={() => onSelectCategory(type.key)}
 					/>
 				))}
 			</div>

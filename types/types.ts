@@ -27,11 +27,14 @@ export interface MarketCategoryCardProps {
 
 // Create form context
 export interface MarketFormData {
+	marketCategory: string
 	marketType: string
 	question: string
 	description: string
 	tradingFee: number
 	liquidity: number
+	resolutionSource?: string
+	resolutionDate?: string
 }
 
 export interface MarketStep {

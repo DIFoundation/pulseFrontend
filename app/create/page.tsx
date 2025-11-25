@@ -22,20 +22,48 @@ const CreateMarket: React.FC = () => {
 	const isStepValid = useMemo(() => {
 		switch (currentStep) {
 			case 1: // Step 0: Category Selection
-				// marketType must be selected (not empty)
-				return formData.marketType !== "" && formData.marketType !== "binary" // Assuming "binary" is the default
+				// marketCategory must be selected
+				return formData.marketCategory !== "" && formData.marketCategory !== undefined
 
 			case 2: // Step 1: Market Type Selection
 				// marketType must be selected
-				return formData.marketType !== ""
+				return formData.marketType !== "" && formData.marketType !== undefined
 
 			case 3: // Step 2: Market Details
-				// Question is required, liquidity must be >= 100
-				return formData.question.trim() !== "" && formData.liquidity >= 100
+				// Question, liquidity, and resolution sources are required
+				const hasQuestion = formData.question && formData.question.trim() !== ""
+				const hasValidLiquidity = formData.liquidity && Number(formData.liquidity) >= 100
+				const hasResolutionSource = formData.resolutionSource && formData.resolutionSource.trim() !== ""
+				const hasResolutionDate = formData.resolutionDate && formData.resolutionDate.trim() !== ""
+
+				console.log("[Validation] Step 3:", {
+					question: formData.question,
+					hasQuestion,
+					liquidity: formData.liquidity,
+					hasValidLiquidity,
+					resolutionSource: formData.resolutionSource,
+					hasResolutionSource,
+					resolutionDate: formData.resolutionDate,
+					hasResolutionDate,
+					isValid: hasQuestion && hasValidLiquidity && hasResolutionSource && hasResolutionDate,
+				})
+
+				return hasQuestion && hasValidLiquidity && hasResolutionSource && hasResolutionDate
 
 			case 4: // Step 3: Review
 				// All validations must pass
-				return formData.marketType !== "" && formData.question.trim() !== "" && formData.liquidity >= 100
+				return (
+					formData.marketCategory !== "" &&
+					formData.marketType !== "" &&
+					formData.question &&
+					formData.question.trim() !== "" &&
+					formData.liquidity &&
+					Number(formData.liquidity) >= 100 &&
+					formData.resolutionSource &&
+					formData.resolutionSource.trim() !== "" &&
+					formData.resolutionDate &&
+					formData.resolutionDate.trim() !== ""
+				)
 
 			default:
 				return false

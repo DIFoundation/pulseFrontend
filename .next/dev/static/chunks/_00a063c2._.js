@@ -1051,8 +1051,8 @@ var _s = __turbopack_context__.k.signature();
 const MARKET_STEPS = [
     {
         id: 1,
-        title: "Choose Market Category",
-        description: "Select the structure that best fits your prediction market."
+        title: "Market Category",
+        description: "Select the best structure for your prediction market."
     },
     {
         id: 2,
@@ -1062,7 +1062,7 @@ const MARKET_STEPS = [
     {
         id: 3,
         title: "Market Details",
-        description: "Input the specifics of your prediction question and parameters."
+        description: "Provide clear and specific information about your prediction market"
     },
     {
         id: 4,
@@ -1072,17 +1072,19 @@ const MARKET_STEPS = [
 ];
 const TOTAL_STEPS = MARKET_STEPS.length;
 const initialFormData = {
+    marketCategory: "",
     marketType: "binary",
     question: "",
     description: "",
     tradingFee: 0.5,
-    liquidity: 500
+    liquidity: 100
 };
 const CreateMarketContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(undefined);
 const CreateMarketProvider = ({ children })=>{
     _s();
     const [currentStep, setCurrentStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialFormData);
+    // 1. Stabilize handleFormChange (Dependencies: [])
     const handleFormChange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "CreateMarketProvider.useCallback[handleFormChange]": (field, value)=>{
             setFormData({
@@ -1093,6 +1095,7 @@ const CreateMarketProvider = ({ children })=>{
             }["CreateMarketProvider.useCallback[handleFormChange]"]);
         }
     }["CreateMarketProvider.useCallback[handleFormChange]"], []);
+    // 2. FIX: Remove formData dependencies and add better logging
     const handleNext = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "CreateMarketProvider.useCallback[handleNext]": ()=>{
             setCurrentStep({
@@ -1108,6 +1111,7 @@ const CreateMarketProvider = ({ children })=>{
             }["CreateMarketProvider.useCallback[handleNext]"]);
         }
     }["CreateMarketProvider.useCallback[handleNext]"], []);
+    // 3. Stabilize handleBack
     const handleBack = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "CreateMarketProvider.useCallback[handleBack]": ()=>{
             setCurrentStep({
@@ -1122,11 +1126,13 @@ const CreateMarketProvider = ({ children })=>{
             }["CreateMarketProvider.useCallback[handleBack]"]);
         }
     }["CreateMarketProvider.useCallback[handleBack]"], []);
+    // 4. Handle final submission (should only be called from step 4)
     const handleSubmit = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "CreateMarketProvider.useCallback[handleSubmit]": (e)=>{
             e.preventDefault();
             console.log("[handleSubmit] Deploying market with data:", formData);
-            // TODO: lockchain deployment logic
+            //Our deployment logic here
+            // TODO: Add your blockchain deployment logic
             // Reset form after successful deployment
             setFormData(initialFormData);
             setCurrentStep(1);
@@ -1158,7 +1164,7 @@ const CreateMarketProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/context/CreateMarketContext.tsx",
-        lineNumber: 87,
+        lineNumber: 94,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
