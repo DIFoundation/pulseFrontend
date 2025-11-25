@@ -641,13 +641,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$form$2f$Market
 ;
 ;
 ;
-const Step0_CategorySeclection = ()=>{
+const Step0_CategorySelection = ()=>{
     const { formData, handleFormChange } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCreateMarket$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCreateMarket"])();
     const categoryTypes = [
         {
             key: "weather",
             title: "Weather",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__["CloudSun"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__["CloudSun"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 10,
                 columnNumber: 45
@@ -656,7 +658,9 @@ const Step0_CategorySeclection = ()=>{
         {
             key: "entertainment",
             title: "Entertainment",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$drama$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Drama$3e$__["Drama"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$drama$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Drama$3e$__["Drama"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 11,
                 columnNumber: 57
@@ -665,7 +669,9 @@ const Step0_CategorySeclection = ()=>{
         {
             key: "sport",
             title: "Sport",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volleyball$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volleyball$3e$__["Volleyball"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volleyball$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volleyball$3e$__["Volleyball"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 12,
                 columnNumber: 41
@@ -674,7 +680,9 @@ const Step0_CategorySeclection = ()=>{
         {
             key: "politics",
             title: "Politics",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$vote$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Vote$3e$__["Vote"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$vote$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Vote$3e$__["Vote"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 13,
                 columnNumber: 47
@@ -683,7 +691,9 @@ const Step0_CategorySeclection = ()=>{
         {
             key: "crypto",
             title: "Crypto",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bitcoin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bitcoin$3e$__["Bitcoin"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bitcoin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bitcoin$3e$__["Bitcoin"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 14,
                 columnNumber: 43
@@ -692,7 +702,9 @@ const Step0_CategorySeclection = ()=>{
         {
             key: "others",
             title: "Others",
-            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$grid$2d$3x3$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {}, void 0, false, {
+            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$grid$2d$3x3$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
+                className: "w-6 h-6"
+            }, void 0, false, {
                 fileName: "[project]/components/steps/Step0.tsx",
                 lineNumber: 15,
                 columnNumber: 43
@@ -703,47 +715,31 @@ const Step0_CategorySeclection = ()=>{
         handleFormChange("marketType", type);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "container p-4",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "title",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    children: "Choose Market Category"
-                }, void 0, false, {
+        className: "w-full max-w-3xl mx-auto",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+            children: categoryTypes.map((type)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$form$2f$MarketCategoryCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MarketCategoryCard"], {
+                    icon: type.icon,
+                    title: type.title,
+                    isSelected: formData.marketType === type.key,
+                    onClick: ()=>onSelectType(type.key)
+                }, type.key, false, {
                     fileName: "[project]/components/steps/Step0.tsx",
-                    lineNumber: 25,
-                    columnNumber: 5
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
-                fileName: "[project]/components/steps/Step0.tsx",
-                lineNumber: 24,
-                columnNumber: 4
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-0 pt-4",
-                children: categoryTypes.map((type)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$form$2f$MarketCategoryCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MarketCategoryCard"], {
-                        icon: type.icon,
-                        title: type.title,
-                        isSelected: formData.marketType === type.key,
-                        onClick: ()=>onSelectType(type.key)
-                    }, type.key, false, {
-                        fileName: "[project]/components/steps/Step0.tsx",
-                        lineNumber: 29,
-                        columnNumber: 6
-                    }, ("TURBOPACK compile-time value", void 0)))
-            }, void 0, false, {
-                fileName: "[project]/components/steps/Step0.tsx",
-                lineNumber: 27,
-                columnNumber: 4
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
+                    lineNumber: 26,
+                    columnNumber: 6
+                }, ("TURBOPACK compile-time value", void 0)))
+        }, void 0, false, {
+            fileName: "[project]/components/steps/Step0.tsx",
+            lineNumber: 24,
+            columnNumber: 4
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
         fileName: "[project]/components/steps/Step0.tsx",
         lineNumber: 23,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };
-const __TURBOPACK__default__export__ = Step0_CategorySeclection;
+const __TURBOPACK__default__export__ = Step0_CategorySelection;
 }),
 "[project]/app/create/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -775,35 +771,58 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$steps$2f$Step0
 ;
 ;
 const CreateMarket = ()=>{
-    const { currentStep, totalSteps, marketSteps, handleNext, handleBack, handleSubmit } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCreateMarket$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCreateMarket"])();
+    const { currentStep, totalSteps, marketSteps, formData, handleNext, handleBack, handleSubmit } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCreateMarket$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCreateMarket"])();
     const currentStepData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>marketSteps.find((step)=>step.id === currentStep), [
         currentStep,
         marketSteps
+    ]);
+    // Validation function for each step
+    const isStepValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        switch(currentStep){
+            case 1:
+                // marketType must be selected (not empty)
+                return formData.marketType !== "" && formData.marketType !== "binary" // Assuming "binary" is the default
+                ;
+            case 2:
+                // marketType must be selected
+                return formData.marketType !== "";
+            case 3:
+                // Question is required, liquidity must be >= 100
+                return formData.question.trim() !== "" && formData.liquidity >= 100;
+            case 4:
+                // All validations must pass
+                return formData.marketType !== "" && formData.question.trim() !== "" && formData.liquidity >= 100;
+            default:
+                return false;
+        }
+    }, [
+        currentStep,
+        formData
     ]);
     const renderStepContent = ()=>{
         switch(currentStep){
             case 1:
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$steps$2f$Step0$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 24,
+                    lineNumber: 48,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0));
             case 2:
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$steps$2f$Step1$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 26,
+                    lineNumber: 50,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0));
             case 3:
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$steps$2f$Step2$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 28,
+                    lineNumber: 52,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0));
             case 4:
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$steps$2f$Step3$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 30,
+                    lineNumber: 54,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0));
             default:
@@ -811,7 +830,7 @@ const CreateMarket = ()=>{
                     children: "Step not found."
                 }, void 0, false, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 32,
+                    lineNumber: 56,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0));
         }
@@ -828,6 +847,11 @@ const CreateMarket = ()=>{
     const handleNextClick = (e)=>{
         e.preventDefault();
         e.stopPropagation();
+        // Validate before proceeding
+        if (!isStepValid) {
+            console.warn("[Page] Cannot proceed - step validation failed");
+            return;
+        }
         console.log("[Page] Next button clicked on step:", currentStep);
         handleNext();
     };
@@ -839,6 +863,11 @@ const CreateMarket = ()=>{
     };
     // Handle the Deploy button click
     const handleDeployClick = ()=>{
+        // Final validation check
+        if (!isStepValid) {
+            console.warn("[Page] Cannot deploy - validation failed");
+            return;
+        }
         console.log("[Page] Deploy button clicked - submitting form");
         // Directly call handleSubmit with a synthetic event
         const syntheticEvent = {
@@ -859,7 +888,7 @@ const CreateMarket = ()=>{
                             children: "Create Prediction Market"
                         }, void 0, false, {
                             fileName: "[project]/app/create/page.tsx",
-                            lineNumber: 73,
+                            lineNumber: 110,
                             columnNumber: 6
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -867,13 +896,13 @@ const CreateMarket = ()=>{
                             children: "Launch your own prediction market on our decentralized platform."
                         }, void 0, false, {
                             fileName: "[project]/app/create/page.tsx",
-                            lineNumber: 76,
+                            lineNumber: 113,
                             columnNumber: 6
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 72,
+                    lineNumber: 109,
                     columnNumber: 5
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -885,7 +914,7 @@ const CreateMarket = ()=>{
                             steps: marketSteps
                         }, void 0, false, {
                             fileName: "[project]/app/create/page.tsx",
-                            lineNumber: 82,
+                            lineNumber: 119,
                             columnNumber: 6
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -893,10 +922,10 @@ const CreateMarket = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-2xl font-bold text-foreground",
-                                    children: currentStepData?.title || "Choose Market Category"
+                                    children: currentStepData?.title
                                 }, void 0, false, {
                                     fileName: "[project]/app/create/page.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 122,
                                     columnNumber: 7
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -904,13 +933,13 @@ const CreateMarket = ()=>{
                                     children: currentStepData?.description
                                 }, void 0, false, {
                                     fileName: "[project]/app/create/page.tsx",
-                                    lineNumber: 88,
+                                    lineNumber: 123,
                                     columnNumber: 7
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/create/page.tsx",
-                            lineNumber: 84,
+                            lineNumber: 121,
                             columnNumber: 6
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -931,71 +960,73 @@ const CreateMarket = ()=>{
                                                     className: "h-4 w-4 mr-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/page.tsx",
-                                                    lineNumber: 101,
+                                                    lineNumber: 136,
                                                     columnNumber: 9
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Previous"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/create/page.tsx",
-                                            lineNumber: 96,
+                                            lineNumber: 131,
                                             columnNumber: 8
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         currentStep < totalSteps ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             type: "button",
                                             onClick: handleNextClick,
-                                            className: "bg-primary hover:bg-primary/90",
+                                            disabled: !isStepValid,
+                                            className: "bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed",
                                             children: [
                                                 "Next Step",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                     className: "h-4 w-4 ml-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/create/page.tsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 147,
                                                     columnNumber: 10
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/create/page.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 141,
                                             columnNumber: 9
                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             type: "button",
                                             onClick: handleDeployClick,
-                                            className: "bg-success text-success-foreground hover:bg-success/90",
+                                            disabled: !isStepValid,
+                                            className: "bg-success text-success-foreground hover:bg-success/90 disabled:opacity-50 disabled:cursor-not-allowed",
                                             children: "Deploy Market"
                                         }, void 0, false, {
                                             fileName: "[project]/app/create/page.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 150,
                                             columnNumber: 9
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/create/page.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 130,
                                     columnNumber: 7
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/create/page.tsx",
-                            lineNumber: 92,
+                            lineNumber: 127,
                             columnNumber: 6
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/create/page.tsx",
-                    lineNumber: 81,
+                    lineNumber: 118,
                     columnNumber: 5
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/app/create/page.tsx",
-            lineNumber: 71,
+            lineNumber: 108,
             columnNumber: 4
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/create/page.tsx",
-        lineNumber: 70,
+        lineNumber: 107,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 };

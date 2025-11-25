@@ -2,7 +2,11 @@ import { CreateMarketContextType, MarketFormData, MarketStep } from "@/types/typ
 import React, { useState, useMemo, createContext, useCallback } from "react"
 
 export const MARKET_STEPS: MarketStep[] = [
-	{ id: 1, title: "Market Category", description: "Select the best structure for your prediction market." },
+	{
+		id: 1,
+		title: "Choose Market Category",
+		description: "Select the structure that best fits your prediction market.",
+	},
 	{ id: 2, title: "Market Type", description: "Select the outcome format for your prediction market." },
 	{ id: 3, title: "Market Details", description: "Input the specifics of your prediction question and parameters." },
 	{ id: 4, title: "Review & Deploy", description: "Final check before deploying your immutable market." },

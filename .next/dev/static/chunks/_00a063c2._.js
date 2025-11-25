@@ -1051,8 +1051,8 @@ var _s = __turbopack_context__.k.signature();
 const MARKET_STEPS = [
     {
         id: 1,
-        title: "Market Category",
-        description: "Select the best structure for your prediction market."
+        title: "Choose Market Category",
+        description: "Select the structure that best fits your prediction market."
     },
     {
         id: 2,
@@ -1158,7 +1158,7 @@ const CreateMarketProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/context/CreateMarketContext.tsx",
-        lineNumber: 83,
+        lineNumber: 87,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

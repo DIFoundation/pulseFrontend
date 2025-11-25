@@ -211,3 +211,164 @@ It can also happen if the client has a browser extension installed which messes 
 [00:19:51.035] Browser LOG     [Page] Deploy button clicked - submitting form
 [00:19:51.035] Browser LOG     [handleSubmit] Deploying market with data: {"description":"fdvddfvdvf","liquidity":500,"marketType":"binary","question":"edswescs","tradingFee":0.5}
 [00:22:13.979] Server  LOG      ✓ Compiled in 712ms
+[00:32:33.545] Server  LOG      ✓ Compiled in 7.5s
+[00:33:49.303] Server  LOG      ✓ Compiled in 617ms
+[00:33:56.282] Browser LOG     [Page] Next button clicked on step: 1
+[00:33:56.282] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:33:56.282] Browser LOG     [handleNext] Moving to step 2
+[00:33:56.282] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:33:56.282] Browser LOG     [handleNext] Moving to step 2
+[00:33:58.739] Browser LOG     [Page] Back button clicked on step: 2
+[00:33:58.739] Browser LOG     [handleBack] Current step: 2
+[00:33:58.739] Browser LOG     [handleBack] Moving to step 1
+[00:33:58.739] Browser LOG     [handleBack] Current step: 2
+[00:33:58.739] Browser LOG     [handleBack] Moving to step 1
+[00:34:22.284] Server  LOG      ✓ Compiled in 673ms
+[00:34:38.866] Server  LOG      ✓ Compiled in 272ms
+[00:35:30.735] Server  LOG      ✓ Compiled in 532ms
+[00:36:11.688] Browser LOG     [Page] Next button clicked on step: 1
+[00:36:11.688] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:36:11.688] Browser LOG     [handleNext] Moving to step 2
+[00:36:11.689] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:36:11.689] Browser LOG     [handleNext] Moving to step 2
+[00:36:15.121] Browser LOG     [Page] Next button clicked on step: 2
+[00:36:15.121] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:36:15.121] Browser LOG     [handleNext] Moving to step 3
+[00:36:15.121] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:36:15.121] Browser LOG     [handleNext] Moving to step 3
+[00:36:21.966] Browser LOG     [Page] Back button clicked on step: 3
+[00:36:21.966] Browser LOG     [handleBack] Current step: 3
+[00:36:21.966] Browser LOG     [handleBack] Moving to step 2
+[00:36:21.966] Browser LOG     [handleBack] Current step: 3
+[00:36:21.966] Browser LOG     [handleBack] Moving to step 2
+[00:36:22.643] Browser LOG     [Page] Back button clicked on step: 2
+[00:36:22.643] Browser LOG     [handleBack] Current step: 2
+[00:36:22.644] Browser LOG     [handleBack] Moving to step 1
+[00:36:22.644] Browser LOG     [handleBack] Current step: 2
+[00:36:22.644] Browser LOG     [handleBack] Moving to step 1
+[00:36:24.871] Browser LOG     [Page] Next button clicked on step: 1
+[00:36:24.871] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:36:24.871] Browser LOG     [handleNext] Moving to step 2
+[00:36:24.871] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:36:24.871] Browser LOG     [handleNext] Moving to step 2
+[00:36:26.792] Browser LOG     [Page] Next button clicked on step: 2
+[00:36:26.792] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:36:26.792] Browser LOG     [handleNext] Moving to step 3
+[00:36:26.792] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:36:26.792] Browser LOG     [handleNext] Moving to step 3
+[00:36:28.447] Browser LOG     [Page] Next button clicked on step: 3
+[00:36:28.447] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:36:28.447] Browser LOG     [handleNext] Moving to step 4
+[00:36:28.447] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:36:28.447] Browser LOG     [handleNext] Moving to step 4
+[00:37:02.696] Browser LOG     [Page] Back button clicked on step: 4
+[00:37:02.696] Browser LOG     [handleBack] Current step: 4
+[00:37:02.696] Browser LOG     [handleBack] Moving to step 3
+[00:37:02.696] Browser LOG     [handleBack] Current step: 4
+[00:37:02.696] Browser LOG     [handleBack] Moving to step 3
+[00:37:03.958] Browser LOG     [Page] Back button clicked on step: 3
+[00:37:03.958] Browser LOG     [handleBack] Current step: 3
+[00:37:03.958] Browser LOG     [handleBack] Moving to step 2
+[00:37:03.958] Browser LOG     [handleBack] Current step: 3
+[00:37:03.958] Browser LOG     [handleBack] Moving to step 2
+[00:37:05.520] Browser LOG     [Page] Back button clicked on step: 2
+[00:37:05.520] Browser LOG     [handleBack] Current step: 2
+[00:37:05.520] Browser LOG     [handleBack] Moving to step 1
+[00:37:05.520] Browser LOG     [handleBack] Current step: 2
+[00:37:05.520] Browser LOG     [handleBack] Moving to step 1
+[00:37:32.392] Server  LOG      ✓ Compiled in 805ms
+[00:37:44.384] Browser LOG     [Page] Next button clicked on step: 1
+[00:37:44.384] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:37:44.384] Browser LOG     [handleNext] Moving to step 2
+[00:37:44.384] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:37:44.384] Browser LOG     [handleNext] Moving to step 2
+[00:37:53.363] Browser LOG     [Page] Next button clicked on step: 2
+[00:37:53.363] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:37:53.363] Browser LOG     [handleNext] Moving to step 3
+[00:37:53.363] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:37:53.363] Browser LOG     [handleNext] Moving to step 3
+[00:37:56.327] Browser LOG     [Page] Next button clicked on step: 3
+[00:37:56.327] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:37:56.327] Browser LOG     [handleNext] Moving to step 4
+[00:37:56.327] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:37:56.327] Browser LOG     [handleNext] Moving to step 4
+[00:38:05.953] Browser LOG     [Page] Deploy button clicked - submitting form
+[00:38:05.953] Browser LOG     [handleSubmit] Deploying market with data: {"description":"","liquidity":500,"marketType":"others","question":"","tradingFee":0.5}
+[00:43:20.450] Browser LOG     [Page] Next button clicked on step: 1
+[00:43:21.263] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:43:21.263] Browser LOG     [handleNext] Moving to step 2
+[00:43:21.263] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:43:21.263] Browser LOG     [handleNext] Moving to step 2
+[00:43:33.450] Server  LOG      ✓ Compiled in 16.4s
+[00:43:34.534] Browser LOG     [Page] Back button clicked on step: 2
+[00:43:34.535] Browser LOG     [handleBack] Current step: 2
+[00:43:34.535] Browser LOG     [handleBack] Moving to step 1
+[00:43:34.535] Browser LOG     [handleBack] Current step: 2
+[00:43:34.535] Browser LOG     [handleBack] Moving to step 1
+[00:43:48.992] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:49.484] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/create" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <ClientSegmentRoot Component={function RootLayout} slots={{...}} ...>
+                        <RootLayout params={Promise}>
+                          <html
+                            lang="en"
+-                           className="dark"
+-                           style={{color-scheme:"dark"}}
+                          >
+                  ...
+
+[00:43:50.904] Browser WARN    Image with src "/md.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:43:57.685] Browser LOG     [Page] Next button clicked on step: 1
+[00:43:57.685] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:43:57.685] Browser LOG     [handleNext] Moving to step 2
+[00:43:57.685] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:43:57.685] Browser LOG     [handleNext] Moving to step 2
+[00:43:59.492] Browser LOG     [Page] Next button clicked on step: 2
+[00:43:59.492] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:43:59.492] Browser LOG     [handleNext] Moving to step 3
+[00:43:59.492] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:43:59.492] Browser LOG     [handleNext] Moving to step 3
+[00:44:02.910] Browser LOG     [Page] Back button clicked on step: 3
+[00:44:02.910] Browser LOG     [handleBack] Current step: 3
+[00:44:02.910] Browser LOG     [handleBack] Moving to step 2
+[00:44:02.910] Browser LOG     [handleBack] Current step: 3
+[00:44:02.910] Browser LOG     [handleBack] Moving to step 2
+[00:44:17.728] Browser LOG     [Page] Next button clicked on step: 2
+[00:44:17.728] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:44:17.728] Browser LOG     [handleNext] Moving to step 3
+[00:44:17.728] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:44:17.728] Browser LOG     [handleNext] Moving to step 3
+[00:44:31.628] Browser LOG     [Page] Next button clicked on step: 3
+[00:44:31.628] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:44:31.628] Browser LOG     [handleNext] Moving to step 4
+[00:44:31.628] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:44:31.628] Browser LOG     [handleNext] Moving to step 4
+[00:44:47.562] Browser LOG     [Page] Deploy button clicked - submitting form
+[00:44:47.562] Browser LOG     [handleSubmit] Deploying market with data: {"description":"djjdjd","liquidity":500,"marketType":"binary","question":"hhfhh","tradingFee":0.5}

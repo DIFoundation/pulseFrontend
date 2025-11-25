@@ -11,12 +11,36 @@ import Step3_Review from "@/components/steps/Step3"
 import Step0_CategorySeclection from "@/components/steps/Step0"
 
 const CreateMarket: React.FC = () => {
-	const { currentStep, totalSteps, marketSteps, handleNext, handleBack, handleSubmit } = useCreateMarket()
+	const { currentStep, totalSteps, marketSteps, formData, handleNext, handleBack, handleSubmit } = useCreateMarket()
 
 	const currentStepData = useMemo(
 		() => marketSteps.find((step) => step.id === currentStep),
 		[currentStep, marketSteps]
 	)
+
+	// Validation function for each step
+	const isStepValid = useMemo(() => {
+		switch (currentStep) {
+			case 1: // Step 0: Category Selection
+				// marketType must be selected (not empty)
+				return formData.marketType !== "" && formData.marketType !== "binary" // Assuming "binary" is the default
+
+			case 2: // Step 1: Market Type Selection
+				// marketType must be selected
+				return formData.marketType !== ""
+
+			case 3: // Step 2: Market Details
+				// Question is required, liquidity must be >= 100
+				return formData.question.trim() !== "" && formData.liquidity >= 100
+
+			case 4: // Step 3: Review
+				// All validations must pass
+				return formData.marketType !== "" && formData.question.trim() !== "" && formData.liquidity >= 100
+
+			default:
+				return false
+		}
+	}, [currentStep, formData])
 
 	const renderStepContent = () => {
 		switch (currentStep) {
@@ -47,6 +71,13 @@ const CreateMarket: React.FC = () => {
 	const handleNextClick = (e: React.MouseEvent) => {
 		e.preventDefault()
 		e.stopPropagation()
+
+		// Validate before proceeding
+		if (!isStepValid) {
+			console.warn("[Page] Cannot proceed - step validation failed")
+			return
+		}
+
 		console.log("[Page] Next button clicked on step:", currentStep)
 		handleNext()
 	}
@@ -60,6 +91,12 @@ const CreateMarket: React.FC = () => {
 
 	// Handle the Deploy button click
 	const handleDeployClick = () => {
+		// Final validation check
+		if (!isStepValid) {
+			console.warn("[Page] Cannot deploy - validation failed")
+			return
+		}
+
 		console.log("[Page] Deploy button clicked - submitting form")
 		// Directly call handleSubmit with a synthetic event
 		const syntheticEvent = { preventDefault: () => {} } as React.FormEvent
@@ -82,9 +119,7 @@ const CreateMarket: React.FC = () => {
 					<ProgressBar currentStep={currentStep} totalSteps={totalSteps} steps={marketSteps} />
 
 					<div className="mb-8 pb-4 text-center">
-						<h2 className="text-2xl font-bold text-foreground">
-							{currentStepData?.title || "Choose Market Category"}
-						</h2>
+						<h2 className="text-2xl font-bold text-foreground">{currentStepData?.title}</h2>
 						<p className="text-sm text-muted-foreground mt-1">{currentStepData?.description}</p>
 					</div>
 
@@ -106,7 +141,8 @@ const CreateMarket: React.FC = () => {
 								<Button
 									type="button"
 									onClick={handleNextClick}
-									className="bg-primary hover:bg-primary/90">
+									disabled={!isStepValid}
+									className="bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed">
 									Next Step
 									<ChevronRight className="h-4 w-4 ml-2" />
 								</Button>
@@ -114,7 +150,8 @@ const CreateMarket: React.FC = () => {
 								<Button
 									type="button"
 									onClick={handleDeployClick}
-									className="bg-success text-success-foreground hover:bg-success/90">
+									disabled={!isStepValid}
+									className="bg-success text-success-foreground hover:bg-success/90 disabled:opacity-50 disabled:cursor-not-allowed">
 									Deploy Market
 								</Button>
 							)}
