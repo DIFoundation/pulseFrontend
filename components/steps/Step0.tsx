@@ -1,5 +1,5 @@
 import React from "react"
-import { Bitcoin, CloudSun, Drama, Grid, Volleyball, Vote } from "lucide-react"
+
 import { useCreateMarket } from "@/hooks/useCreateMarket"
 import { MarketCategoryCard } from "../form/MarketCategoryCard"
 
@@ -7,12 +7,12 @@ const Step0_CategorySelection: React.FC = () => {
 	const { formData, handleFormChange } = useCreateMarket()
 
 	const categoryTypes = [
-		{ key: "weather", title: "Weather", icon: <CloudSun className="w-6 h-6" /> },
-		{ key: "entertainment", title: "Entertainment", icon: <Drama className="w-6 h-6" /> },
-		{ key: "sport", title: "Sport", icon: <Volleyball className="w-6 h-6" /> },
-		{ key: "politics", title: "Politics", icon: <Vote className="w-6 h-6" /> },
-		{ key: "crypto", title: "Crypto", icon: <Bitcoin className="w-6 h-6" /> },
-		{ key: "others", title: "Others", icon: <Grid className="w-6 h-6" /> },
+		{ key: "weather", title: "Weather", iconUrl: "/weather.png" },
+		{ key: "entertainment", title: "Entertainment", iconUrl: "/entertainment.png" },
+		{ key: "sport", title: "Sport", iconUrl: "/sports.png" },
+		{ key: "politics", title: "Politics", iconUrl: "/politics.png" },
+		{ key: "crypto", title: "Crypto", iconUrl: "/crypto.png" },
+		{ key: "others", title: "Others", iconUrl: "/others.png" },
 	]
 
 	const onSelectCategory = (category: string) => {
@@ -25,7 +25,7 @@ const Step0_CategorySelection: React.FC = () => {
 				{categoryTypes.map((type) => (
 					<MarketCategoryCard
 						key={type.key}
-						icon={type.icon}
+						iconUrl={type.iconUrl}
 						title={type.title}
 						isSelected={formData.marketCategory === type.key}
 						onClick={() => onSelectCategory(type.key)}

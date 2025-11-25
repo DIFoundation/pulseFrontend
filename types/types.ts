@@ -19,7 +19,7 @@ export interface MarketTypeCardProps {
 }
 
 export interface MarketCategoryCardProps {
-	icon: React.ReactNode
+	iconUrl: string
 	title: string
 	isSelected?: boolean
 	onClick?: () => void

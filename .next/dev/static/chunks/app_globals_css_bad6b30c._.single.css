@@ -1232,10 +1232,6 @@ body {
   align-items: stretch;
 }
 
-.justify-normal {
-  justify-content: normal;
-}
-
 .justify-start {
   justify-content: flex-start;
 }
@@ -2185,6 +2181,11 @@ body {
 
 .shadow-primary\/40 {
   --tw-shadow-color: hsl(var(--primary) / .4);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-primary-dark {
+  --tw-shadow-color: hsl(var(--primary-dark));
   --tw-shadow: var(--tw-shadow-colored);
 }
 
