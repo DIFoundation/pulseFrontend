@@ -133,35 +133,37 @@ const CreateMarket: React.FC = () => {
 	return (
 		<div className="min-h-screen cosmic-gradient px-4">
 			<main className="container pt-24 px-4">
-				<div className="text-center mb-8">
+				<div className="text-center mb-4">
 					<h1 className="text-3xl sm:text-4xl font-extrabold text-foreground glow-text">
 						Create Prediction Market
 					</h1>
-					<p className="text-muted-foreground mt-2 max-w-xl mx-auto">
-						Launch your own prediction market on our decentralized platform.
+					<p className="text-foreground mt-2 max-w-xl mx-auto">
+						Launch your own prediction market with out guided wizard. Choose from templates or creates
+						custom markets.
 					</p>
 				</div>
 
 				<div className="bg p-4 sm:p-8">
 					<ProgressBar currentStep={currentStep} totalSteps={totalSteps} steps={marketSteps} />
 
-					<div className="mb-8 pb-4 text-center">
+					<div className="mb-4 pb-4 text-center">
 						<h2 className="text-2xl font-bold text-foreground">{currentStepData?.title}</h2>
-						<p className="text-sm text-muted-foreground mt-1">{currentStepData?.description}</p>
+						<p className="text-sm text-foreground mt-1">{currentStepData?.description}</p>
 					</div>
 
-					{/* FIX: Use handleFormSubmit instead of handleSubmit directly */}
 					<form onSubmit={handleFormSubmit} className="space-y-8">
 						{renderStepContent()}
 
-						<div className="flex justify-between pt-6">
-							<Button
-								type="button"
-								onClick={handleBackClick}
-								disabled={currentStep === 1}
-								className="bg-transparent border border-secondary-light text-foreground shadow-none disabled:opacity-30">
-								Previous
-							</Button>
+						<div className={`${currentStep === 1 ? "justify-end" : "justify-between"} flex pt-6`}>
+							{currentStep > 1 && (
+								<Button
+									type="button"
+									onClick={handleBackClick}
+									disabled={currentStep === 1}
+									className="bg-transparent border border-secondary-light text-foreground shadow-none disabled:opacity-30">
+									Previous
+								</Button>
+							)}
 
 							{currentStep < totalSteps ? (
 								<Button

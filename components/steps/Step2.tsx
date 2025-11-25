@@ -31,7 +31,7 @@ const Step2_MarketDetails: React.FC = () => {
 			<div className="space-y-6">
 				{/* Market Question */}
 				<div>
-					<label htmlFor="question" className="block text-sm font-medium text-gray-300 mb-2">
+					<label htmlFor="question" className="block text-sm font-semibold leading-relaxed mb-2">
 						Market Question
 					</label>
 					<Input
@@ -40,13 +40,13 @@ const Step2_MarketDetails: React.FC = () => {
 						value={formData.question}
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
-						className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500"
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 					/>
 				</div>
 
 				{/* Description */}
 				<div>
-					<label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-2">
+					<label htmlFor="description" className="block text-sm font-semibold leading-relaxed mb-2">
 						Description
 					</label>
 					<Textarea
@@ -56,7 +56,7 @@ const Step2_MarketDetails: React.FC = () => {
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
 						rows={4}
-						className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500 resize-none"
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light resize-none"
 					/>
 				</div>
 
@@ -64,7 +64,7 @@ const Step2_MarketDetails: React.FC = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 					{/* Trading Fee */}
 					<div>
-						<label htmlFor="tradingFee" className="block text-sm font-medium text-gray-300 mb-2">
+						<label htmlFor="tradingFee" className="block text-sm font-semibold leading-relaxed mb-2">
 							Trading Fee (%)
 						</label>
 						<div className="relative">
@@ -78,7 +78,7 @@ const Step2_MarketDetails: React.FC = () => {
 								min={0}
 								max={5}
 								step={0.1}
-								className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500"
+								className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 							/>
 							<span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none">
 								%
@@ -88,7 +88,7 @@ const Step2_MarketDetails: React.FC = () => {
 
 					{/* Initial Liquidity */}
 					<div>
-						<label htmlFor="liquidity" className="block text-sm font-medium text-gray-300 mb-2">
+						<label htmlFor="liquidity" className="block text-sm font-semibold leading-relaxed mb-2">
 							Initial Liquidity (BDAG)
 						</label>
 						<div className="relative">
@@ -100,7 +100,7 @@ const Step2_MarketDetails: React.FC = () => {
 								onChange={handleChange}
 								onKeyDown={handleKeyDown}
 								min={100}
-								className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500"
+								className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 							/>
 						</div>
 					</div>
@@ -108,7 +108,7 @@ const Step2_MarketDetails: React.FC = () => {
 
 				{/* Resolution Source */}
 				<div>
-					<label htmlFor="resolutionSource" className="block text-sm font-medium text-gray-300 mb-2">
+					<label htmlFor="resolutionSource" className="block text-sm font-semibold leading-relaxed mb-2">
 						Resolution Source
 					</label>
 					<Input
@@ -117,12 +117,12 @@ const Step2_MarketDetails: React.FC = () => {
 						value={formData.resolutionSource || ""}
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
-						className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500"
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 					/>
 				</div>
 
 				<div>
-					<label htmlFor="resolutionDate" className="block text-sm font-medium text-gray-300 mb-2">
+					<label htmlFor="resolutionDate" className="block text-sm font-semibold leading-relaxed mb-2">
 						Resolution Source
 					</label>
 					<Input
@@ -131,7 +131,7 @@ const Step2_MarketDetails: React.FC = () => {
 						value={formData.resolutionDate || ""}
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
-						className="bg-zinc-900 border-zinc-800 text-white placeholder:text-gray-500"
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 					/>
 				</div>
 			</div>

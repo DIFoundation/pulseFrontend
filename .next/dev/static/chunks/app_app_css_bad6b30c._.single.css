@@ -1,4 +1,8 @@
 /* [project]/app/app.css [app-client] (css) */
+body {
+  letter-spacing: .025em;
+}
+
 .poppins-thin {
   font-family: Poppins, sans-serif;
   font-style: normal;

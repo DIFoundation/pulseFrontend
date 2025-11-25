@@ -1,4 +1,8 @@
 /* [project]/app/app.css [app-client] (css) */
+body {
+  letter-spacing: .025em;
+}
+
 .poppins-thin {
   font-family: Poppins, sans-serif;
   font-style: normal;
@@ -416,6 +420,7 @@ img, video {
   --primary-light: 28, 84%, 73%;
   --primary-dark: 25, 100%, 42%;
   --primary-brown: 21, 57%, 9%;
+  --primary-darkBrown: 0, 14%, 4%;
   --primary-foreground: 0 0% 100%;
   --primary-foreground-gray: 0 0% 59%;
   --secondary: 0 0% 10%;
@@ -1340,8 +1345,16 @@ body {
   align-items: stretch;
 }
 
+.justify-normal {
+  justify-content: normal;
+}
+
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1614,11 +1627,6 @@ body {
   border-color: #0000;
 }
 
-.border-zinc-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(39 39 42 / var(--tw-border-opacity, 1));
-}
-
 .border-l-transparent {
   border-left-color: #0000;
 }
@@ -1645,10 +1653,6 @@ body {
 
 .bg-accent\/40 {
   background-color: hsl(var(--accent) / .4);
-}
-
-.bg-accent\/50 {
-  background-color: hsl(var(--accent) / .5);
 }
 
 .bg-background {
@@ -1720,6 +1724,10 @@ body {
   background-color: hsl(var(--primary-brown));
 }
 
+.bg-primary-darkBrown {
+  background-color: hsl(var(--primary-darkBrown));
+}
+
 .bg-primary\/10 {
   background-color: hsl(var(--primary) / .1);
 }
@@ -1755,16 +1763,6 @@ body {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-zinc-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
-}
-
-.bg-zinc-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
 }
 
 .fill-current {
@@ -2170,11 +2168,6 @@ body {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-500 {
@@ -2586,13 +2579,12 @@ body {
   color: hsl(var(--foreground));
 }
 
-.placeholder\:text-gray-500::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-}
-
 .placeholder\:text-muted-foreground::placeholder {
   color: hsl(var(--muted-foreground));
+}
+
+.placeholder\:text-secondary-light::placeholder {
+  color: hsl(var(--secondary-light));
 }
 
 .after\:absolute:after {
@@ -2678,10 +2670,6 @@ body {
   background-color: hsl(var(--accent) / .2);
 }
 
-.hover\:bg-accent\/70:hover {
-  background-color: hsl(var(--accent) / .7);
-}
-
 .hover\:bg-destructive-light:hover {
   background-color: hsl(var(--destructive-light));
 }
@@ -2737,10 +2725,6 @@ body {
 
 .hover\:bg-success-light:hover {
   background-color: hsl(var(--success-light));
-}
-
-.hover\:bg-success\/90:hover {
-  background-color: hsl(var(--success) / .9);
 }
 
 .hover\:bg-transparent:hover {
