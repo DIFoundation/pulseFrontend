@@ -1,5 +1,4 @@
 import React from "react"
-import { Zap, Code, TrendingUp } from "lucide-react"
 import { useCreateMarket } from "@/hooks/useCreateMarket"
 import { MarketTypeCard } from "../form/MarketTypeCard"
 
@@ -10,20 +9,20 @@ const Step1_TypeSelection: React.FC = () => {
 		{
 			key: "binary",
 			title: "Binary Number",
-			description: "Will bitcoin reach $100,000 by end of 2025?",
-			icon: <Zap />,
+			description: "Simple Yes and No market",
+			question: "Will bitcoin reach $100,000 by end of 2025?",
 		},
 		{
 			key: "multi",
 			title: "Multi-Outcome Market",
-			description: "Which team will win super bowl 2025?",
-			icon: <Code />,
+			description: "Multi-choice prediction market",
+			question: "Which team will win super bowl 2025?",
 		},
 		{
 			key: "scalar",
 			title: "Scalar Market",
-			description: "What will be the final score in the NBA finals?",
-			icon: <TrendingUp />,
+			description: "Long and short prediction market",
+			question: "What will be the price of Ethereum by December 2025?",
 		},
 	]
 
@@ -37,9 +36,9 @@ const Step1_TypeSelection: React.FC = () => {
 				{marketTypes.map((type) => (
 					<MarketTypeCard
 						key={type.key}
-						icon={type.icon}
 						title={type.title}
 						description={type.description}
+						question={type.question}
 						isSelected={formData.marketType === type.key}
 						onClick={() => onSelectType(type.key)}
 					/>

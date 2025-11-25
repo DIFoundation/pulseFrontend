@@ -11,9 +11,9 @@ export interface Market {
 }
 
 export interface MarketTypeCardProps {
-	icon: React.ReactNode
 	title: string
 	description: string
+	question: string
 	isSelected?: boolean
 	onClick?: () => void
 }

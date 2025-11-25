@@ -1,7 +1,6 @@
 "use client"
 import React, { useMemo } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
+import { ChevronsRight } from "lucide-react"
 import { ProgressBar } from "@/components/form/ProgressBar"
 import { Button } from "@/components/ui/button"
 import { useCreateMarket } from "@/hooks/useCreateMarket"
@@ -155,13 +154,12 @@ const CreateMarket: React.FC = () => {
 					<form onSubmit={handleFormSubmit} className="space-y-8">
 						{renderStepContent()}
 
-						<div className="flex justify-between pt-6 border-t border-border/50">
+						<div className="flex justify-between pt-6">
 							<Button
 								type="button"
 								onClick={handleBackClick}
 								disabled={currentStep === 1}
-								className="bg-accent/50 text-foreground hover:bg-accent/70 shadow-none disabled:opacity-30">
-								<ChevronLeft className="h-4 w-4 mr-2" />
+								className="bg-transparent border border-secondary-light text-foreground shadow-none disabled:opacity-30">
 								Previous
 							</Button>
 
@@ -170,16 +168,16 @@ const CreateMarket: React.FC = () => {
 									type="button"
 									onClick={handleNextClick}
 									disabled={!isStepValid}
-									className="bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed">
+									className="bg-primary hover:bg-transparent hover:border hover:border-secondary-light disabled:opacity-50 disabled:cursor-not-allowed">
 									Next Step
-									<ChevronRight className="h-4 w-4 ml-2" />
+									<ChevronsRight className="h-4 w-4 ml-2" />
 								</Button>
 							) : (
 								<Button
 									type="button"
 									onClick={handleDeployClick}
 									disabled={!isStepValid}
-									className="bg-success text-success-foreground hover:bg-success/90 disabled:opacity-50 disabled:cursor-not-allowed">
+									className="bg-primary text-primary-foreground hover:bg-transparent hover:border hover:border-secondary-light disabled:opacity-50 disabled:cursor-not-allowed">
 									Deploy Market
 								</Button>
 							)}
