@@ -8,7 +8,8 @@ import { useEffect, useMemo, useState } from "react"
 import { markets as dummyMarkets } from "@/data/markets"
 
 const Markets = () => {
-	const [category, setCategory] = useState("trending")
+	const [status, setStatus] = useState("trending")
+	const [type, setType] = useState("All")
 	const [page, setPage] = useState(1)
 	const [loading, setLoading] = useState(true)
 	const [displayed, setDisplayed] = useState([] as typeof dummyMarkets)
@@ -17,8 +18,14 @@ const Markets = () => {
 
 	// Filter first
 	const filtered = useMemo(() => {
-		return dummyMarkets.filter((item) => (category === "All" ? true : item.category === category))
-	}, [category])
+		return dummyMarkets.filter((item) => {
+			const statusMatch = item.status === status
+
+			const typeMatch = type === "All Market" ? true : item.type === type
+
+			return statusMatch && typeMatch
+		})
+	}, [status, type])
 
 	useEffect(() => {
 		Promise.resolve().then(() => {
@@ -32,7 +39,7 @@ const Markets = () => {
 		}, 700)
 
 		return () => clearTimeout(timeout)
-	}, [category, filtered])
+	}, [filtered])
 
 	// Load more handler
 	const loadMore = () => {
@@ -73,26 +80,13 @@ const Markets = () => {
 					<div className="overlay absolute top-0 left-0 w-full h-full bg-black/10" />
 				</div>
 				{/* Markets */}
-				{/* <div className="min-h-screen pt-20 container px-4">
-					<MarketFilters active={category} onChange={setCategory} />
-
-					<MarketGrid markets={displayed} />
-
-					<div className="flex justify-center mt-10">
-						{canLoadMore ? (
-							<button
-								onClick={loadMore}
-								className="px-6 py-3 border border-gray-600 rounded-lg text-sm hover:bg-gray-700 transition">
-								Load More
-							</button>
-						) : (
-							<p className="text-gray-500 text-sm">No more markets to load.</p>
-						)}
-					</div>
-				</div> */}
 				<div className="pt-20 container px-0.5 ">
-					<MarketFilters active={category} onChange={setCategory} />
-
+					<MarketFilters
+						activeStatus={status}
+						onStatusChange={setStatus}
+						activeType={type}
+						onTypeChange={setType}
+					/>
 					<MarketGrid markets={displayed} loading={loading} />
 
 					<div className="flex justify-center mt-10">
