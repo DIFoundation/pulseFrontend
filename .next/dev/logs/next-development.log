@@ -1,0 +1,271 @@
+[00:00:14.751] Server  LOG      ✓ Ready in 7.8s
+[00:00:57.866] Server  LOG      ○ Compiling / ...
+[00:01:28.984] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:29.542] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <ClientSegmentRoot Component={function RootLayout} slots={{...}} ...>
+                        <RootLayout params={Promise}>
+                          <html
+                            lang="en"
+-                           className="dark"
+-                           style={{color-scheme:"dark"}}
+                          >
+                  ...
+
+[00:01:32.183] Browser WARN    Image with src "/gloww.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:01:32.183] Browser WARN    Image with src "/md.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:05:23.142] Server  LOG      ○ Compiling /markets ...
+[00:11:17.109] Server  LOG      ○ Compiling /create ...
+[00:12:50.543] Browser LOG     [Page] Next button clicked on step: 1
+[00:12:50.545] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:12:50.545] Browser LOG     [handleNext] Moving to step 2
+[00:12:50.545] Browser LOG     [handleNext] Current step: 1, Total steps: 4
+[00:12:50.545] Browser LOG     [handleNext] Moving to step 2
+[00:13:09.834] Browser LOG     [Page] Next button clicked on step: 2
+[00:13:09.835] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:13:09.835] Browser LOG     [handleNext] Moving to step 3
+[00:13:09.835] Browser LOG     [handleNext] Current step: 2, Total steps: 4
+[00:13:09.835] Browser LOG     [handleNext] Moving to step 3
+[00:13:09.835] Browser LOG     [Validation] Step 3: {"hasQuestion":"","hasValidLiquidity":true,"isValid":"","liquidity":100,"question":""}
+[00:13:09.835] Browser LOG     [Validation] Step 3: {"hasQuestion":"","hasValidLiquidity":true,"isValid":"","liquidity":100,"question":""}
+[00:13:12.762] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"W"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"W"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Wi"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Wi"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Wil"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Wil"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will"}
+[00:13:12.763] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will"}
+[00:13:13.192] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will "}
+[00:13:13.192] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will "}
+[00:13:13.487] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will i"}
+[00:13:13.487] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will i"}
+[00:13:13.597] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it"}
+[00:13:13.597] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it"}
+[00:13:14.432] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will i"}
+[00:13:14.432] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will i"}
+[00:13:15.400] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it"}
+[00:13:15.400] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it"}
+[00:13:15.578] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it "}
+[00:13:15.578] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it "}
+[00:13:16.110] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it r"}
+[00:13:16.111] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it r"}
+[00:13:16.394] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it ra"}
+[00:13:16.394] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it ra"}
+[00:13:16.394] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai"}
+[00:13:16.394] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai"}
+[00:13:16.841] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai "}
+[00:13:16.841] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai "}
+[00:13:17.306] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai"}
+[00:13:17.309] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rai"}
+[00:13:17.632] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain"}
+[00:13:17.632] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain"}
+[00:13:17.777] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain "}
+[00:13:17.777] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain "}
+[00:13:18.131] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain t"}
+[00:13:18.131] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain t"}
+[00:13:18.131] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain to"}
+[00:13:18.131] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain to"}
+[00:13:18.318] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tom"}
+[00:13:18.318] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tom"}
+[00:13:18.656] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomo"}
+[00:13:18.656] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomo"}
+[00:13:18.656] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomor"}
+[00:13:18.656] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomor"}
+[00:13:18.871] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorr"}
+[00:13:18.871] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorr"}
+[00:13:18.871] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorro"}
+[00:13:18.871] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorro"}
+[00:13:19.031] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow"}
+[00:13:19.031] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow"}
+[00:13:19.539] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:19.540] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:21.978] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:21.978] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.261] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.261] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.262] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.262] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.446] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.446] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.655] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.655] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.949] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.949] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.949] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:22.949] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.308] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.308] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.767] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.768] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.768] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.768] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.768] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.768] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.926] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:23.926] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.226] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.226] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.415] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.415] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.672] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.672] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.672] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:24.672] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:25.347] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:25.347] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?"}
+[00:13:45.066] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"O"}
+[00:13:45.066] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"O"}
+[00:13:45.274] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Op"}
+[00:13:45.274] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Op"}
+[00:13:45.404] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Ope"}
+[00:13:45.404] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Ope"}
+[00:13:45.646] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Open"}
+[00:13:45.646] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Open"}
+[00:13:48.575] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openw"}
+[00:13:48.575] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openw"}
+[00:13:48.748] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwe"}
+[00:13:48.748] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwe"}
+[00:13:48.978] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwea"}
+[00:13:48.978] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwea"}
+[00:13:49.135] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweap"}
+[00:13:49.135] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweap"}
+[00:13:49.516] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwea"}
+[00:13:49.516] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openwea"}
+[00:13:49.834] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweat"}
+[00:13:49.834] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweat"}
+[00:13:49.979] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweath"}
+[00:13:49.979] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweath"}
+[00:13:50.245] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweathe"}
+[00:13:50.245] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweathe"}
+[00:13:50.245] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweather"}
+[00:13:50.245] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweather"}
+[00:13:51.123] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweathera"}
+[00:13:51.123] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweathera"}
+[00:13:51.124] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweatherap"}
+[00:13:51.124] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweatherap"}
+[00:13:51.349] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweatherapi"}
+[00:13:51.349] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweatherapi"}
+[00:13:54.244] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweather api"}
+[00:13:54.244] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionSource":true,"hasValidLiquidity":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionSource":"Openweather api"}
+[00:14:31.847] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"O","resolutionSource":"Openweather api"}
+[00:14:31.847] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"O","resolutionSource":"Openweather api"}
+[00:14:32.047] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Op","resolutionSource":"Openweather api"}
+[00:14:32.047] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Op","resolutionSource":"Openweather api"}
+[00:14:32.192] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Opt","resolutionSource":"Openweather api"}
+[00:14:32.192] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Opt","resolutionSource":"Openweather api"}
+[00:14:32.374] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Opti","resolutionSource":"Openweather api"}
+[00:14:32.375] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Opti","resolutionSource":"Openweather api"}
+[00:14:32.581] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optio","resolutionSource":"Openweather api"}
+[00:14:32.581] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optio","resolutionSource":"Openweather api"}
+[00:14:32.952] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Option","resolutionSource":"Openweather api"}
+[00:14:32.952] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Option","resolutionSource":"Openweather api"}
+[00:14:33.156] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optiona","resolutionSource":"Openweather api"}
+[00:14:33.156] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optiona","resolutionSource":"Openweather api"}
+[00:14:33.306] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optional","resolutionSource":"Openweather api"}
+[00:14:33.307] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optional","resolutionSource":"Openweather api"}
+[00:14:44.297] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalh","resolutionSource":"Openweather api"}
+[00:14:44.297] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalh","resolutionSource":"Openweather api"}
+[00:14:44.297] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalhv","resolutionSource":"Openweather api"}
+[00:14:44.297] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalhv","resolutionSource":"Openweather api"}
+[00:14:44.983] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalh","resolutionSource":"Openweather api"}
+[00:14:44.983] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optionalh","resolutionSource":"Openweather api"}
+[00:14:45.194] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optional","resolutionSource":"Openweather api"}
+[00:14:45.194] Browser LOG     [Validation] Step 3: {"hasQuestion":true,"hasResolutionDate":true,"hasResolutionSource":true,"hasValidLiquidity":true,"isValid":true,"liquidity":100,"question":"Will it rain tomorrow?","resolutionDate":"Optional","resolutionSource":"Openweather api"}
+[00:16:43.121] Browser LOG     [Page] Next button clicked on step: 3
+[00:16:43.121] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:16:43.121] Browser LOG     [handleNext] Moving to step 4
+[00:16:43.121] Browser LOG     [handleNext] Current step: 3, Total steps: 4
+[00:16:43.121] Browser LOG     [handleNext] Moving to step 4
+[00:21:14.518] Browser LOG     [Page] Deploy button clicked - submitting form
+[00:21:14.897] Browser LOG     [handleSubmit] Deploying market with data: {"description":"Rain go fall?","liquidity":100,"marketCategory":"weather","marketType":"binary","question":"Will it rain tomorrow?","resolutionDate":"Optional","resolutionSource":"Openweather api","tradingFee":0.5}
+[01:30:58.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:30:59.919] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <ClientSegmentRoot Component={function RootLayout} slots={{...}} ...>
+                        <RootLayout params={Promise}>
+                          <html
+                            lang="en"
+-                           className="dark"
+-                           style={{color-scheme:"dark"}}
+                          >
+                  ...
+
+[01:31:00.742] Browser WARN    Image with src "/gloww.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:31:08.872] Browser WARN    Image with src "/md.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:31:44.100] Server  LOG      ✓ Compiled in 1094ms
+[01:32:23.824] Server  LOG      ✓ Compiled in 580ms
+[01:35:36.691] Server  LOG      ✓ Compiled in 750ms
+[01:35:47.160] Server  LOG      ✓ Compiled in 622ms
+[01:36:27.501] Server  LOG      ✓ Compiled in 989ms
+[01:36:40.641] Server  LOG      ✓ Compiled in 330ms
+[01:36:47.493] Server  LOG      ✓ Compiled in 324ms
+[01:43:12.897] Server  LOG      ✓ Compiled in 5.7s
+[01:43:50.264] Server  LOG      ✓ Compiled in 420ms
+[01:55:01.984] Server  LOG      ✓ Compiled in 10s
+[02:04:27.452] Server  LOG      ✓ Compiled in 5.7s
+[02:05:01.450] Server  LOG      ✓ Compiled in 1640ms
+[02:06:19.326] Server  LOG      ✓ Compiled in 956ms
+[02:06:46.024] Server  LOG      ✓ Compiled in 690ms
+[02:06:59.139] Server  LOG      ✓ Compiled in 386ms
+[02:08:05.884] Server  LOG      ✓ Compiled in 1267ms
+[02:08:32.088] Server  LOG      ✓ Compiled in 3.2s
+[02:10:11.898] Server  LOG      ✓ Compiled in 1068ms
+[02:10:25.319] Server  LOG      ✓ Compiled in 754ms
+[02:11:15.694] Server  LOG      ✓ Compiled in 491ms

@@ -2,24 +2,25 @@
 export interface Market {
 	id: number
 	title: string
-	category: "trending" | "ending-soon" | "high-value" | "newest" | "closed"
 	question: string
 	liquidity: string
 	volume: string
 	duration: string
 	participants: number
+	status: string
+	type: string
 }
 
 export interface MarketTypeCardProps {
-	icon: React.ReactNode
 	title: string
 	description: string
+	question: string
 	isSelected?: boolean
 	onClick?: () => void
 }
 
 export interface MarketCategoryCardProps {
-	icon: React.ReactNode
+	iconUrl: string
 	title: string
 	isSelected?: boolean
 	onClick?: () => void
@@ -27,11 +28,14 @@ export interface MarketCategoryCardProps {
 
 // Create form context
 export interface MarketFormData {
+	marketCategory: string
 	marketType: string
 	question: string
 	description: string
 	tradingFee: number
 	liquidity: number
+	resolutionSource?: string
+	resolutionDate?: string
 }
 
 export interface MarketStep {

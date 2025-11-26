@@ -1,0 +1,132 @@
+/* [project]/app/app.css [app-client] (css) */
+body {
+  letter-spacing: .025em;
+}
+
+.wavy-box {
+  --s: 6px;
+  --w: 420px;
+  width: round(var(--w), 4 * var(--s));
+  aspect-ratio: unset;
+  border: calc(var(--s) * 2.2) solid #0000;
+  box-sizing: border-box;
+  min-height: 285px;
+  -webkit-mask: radial-gradient(calc(sqrt(1.5) * var(--s)), #000 calc(100% - .7px), #0000), conic-gradient(#000 0 0) content-box, radial-gradient(calc(sqrt(1.5) * var(--s)), #0000 100%, #000 calc(100% + .7px)) var(--s) var(--s) padding-box;
+  -webkit-mask: radial-gradient(calc(sqrt(1.5) * var(--s)), #000 calc(100% - .7px), #0000), conic-gradient(#000 0 0) content-box, radial-gradient(calc(sqrt(1.5) * var(--s)), #0000 100%, #000 calc(100% + .7px)) var(--s) var(--s) padding-box;
+  mask: radial-gradient(calc(sqrt(1.5) * var(--s)), #000 calc(100% - .7px), #0000), conic-gradient(#000 0 0) content-box, radial-gradient(calc(sqrt(1.5) * var(--s)), #0000 100%, #000 calc(100% + .7px)) var(--s) var(--s) padding-box;
+  -webkit-mask-size: calc(var(--s) * 4) calc(var(--s) * 4);
+  -webkit-mask-size: calc(var(--s) * 4) calc(var(--s) * 4);
+  mask-size: calc(var(--s) * 4) calc(var(--s) * 4);
+  background: #1e1e1e;
+  border-radius: 16px;
+}
+
+.poppins-thin {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.poppins-extralight {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+
+.poppins-light {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.poppins-extrabold {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.poppins-black {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.poppins-thin-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.poppins-extralight-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 200;
+}
+
+.poppins-light-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.poppins-regular-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.poppins-medium-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.poppins-semibold-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.poppins-bold-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.poppins-extrabold-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.poppins-black-italic {
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=app_app_css_bad6b30c._.single.css.map*/

@@ -4,78 +4,134 @@ import { Textarea } from "@/components/ui/textarea"
 import { useCreateMarket } from "@/hooks/useCreateMarket"
 import { MarketFormData } from "@/types/types"
 
-// The component no longer needs props
 const Step2_MarketDetails: React.FC = () => {
-	// Retrieve necessary state (formData) and handler (handleFormChange) from context
 	const { formData, handleFormChange } = useCreateMarket()
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { id, value } = e.target
 
-		// CRITICAL FIX: Explicitly handle empty string for number fields.
-		// If the input is empty, store the empty string.
-		// Otherwise, convert the value to a number.
 		if (id === "tradingFee" || id === "liquidity") {
 			const finalValue = value === "" ? "" : Number(value)
 			handleFormChange(id as keyof MarketFormData, finalValue)
 			return
 		}
 
-		// Handle string inputs (question, description)
 		handleFormChange(id as keyof MarketFormData, value)
 	}
 
+	// FIX: Prevent Enter key from submitting the form
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		if (e.key === "Enter") {
+			e.preventDefault()
+		}
+	}
+
 	return (
-		<div className="space-y-6">
-			<div>
-				<label htmlFor="question" className="block text-sm font-medium text-foreground mb-2">
-					Market Question
-				</label>
-				<Input
-					id="question"
-					placeholder="e.g., Will Bitcoin exceed $100k by Q4 2025?"
-					value={formData.question} // Value from context state
-					onChange={handleChange}
-				/>
-			</div>
-			<div>
-				<label htmlFor="description" className="block text-sm font-medium text-foreground mb-2">
-					Description (Optional)
-				</label>
-				<Textarea
-					id="description"
-					placeholder="Provide context and rules for the market."
-					value={formData.description} // Value from context state
-					onChange={handleChange}
-				/>
-			</div>
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+		<div className="w-full max-w-3xl mx-auto">
+			<div className="space-y-6">
+				{/* Market Question */}
 				<div>
-					<label htmlFor="tradingFee" className="block text-sm font-medium text-foreground mb-2">
-						Trading Fee (%)
+					<label htmlFor="question" className="block text-sm font-semibold leading-relaxed mb-2">
+						Market Question
 					</label>
 					<Input
-						id="tradingFee"
-						type="number"
-						// Since we now allow "" to be stored, we must ensure the input value is correctly rendered.
-						// If formData.tradingFee is 0.5 (initial), it renders fine. If it's "" it renders as empty.
-						value={formData.tradingFee}
+						id="question"
+						placeholder="e.g Will Bitcoin reach $100,000 by October 2025?"
+						value={formData.question}
 						onChange={handleChange}
-						min={0}
-						max={5}
+						onKeyDown={handleKeyDown}
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 					/>
 				</div>
+
+				{/* Description */}
 				<div>
-					<label htmlFor="liquidity" className="block text-sm font-medium text-foreground mb-2">
-						Initial Liquidity (USDC)
+					<label htmlFor="description" className="block text-sm font-semibold leading-relaxed mb-2">
+						Description
+					</label>
+					<Textarea
+						id="description"
+						placeholder="e.g BTC higher"
+						value={formData.description}
+						onChange={handleChange}
+						onKeyDown={handleKeyDown}
+						rows={4}
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light resize-none"
+					/>
+				</div>
+
+				{/* Trading Fee and Initial Liquidity - Side by Side */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+					{/* Trading Fee */}
+					<div>
+						<label htmlFor="tradingFee" className="block text-sm font-semibold leading-relaxed mb-2">
+							Trading Fee (%)
+						</label>
+						<div className="relative">
+							<Input
+								id="tradingFee"
+								type="number"
+								placeholder="0.5%"
+								value={formData.tradingFee}
+								onChange={handleChange}
+								onKeyDown={handleKeyDown}
+								min={0}
+								max={5}
+								step={0.1}
+								className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
+							/>
+							<span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none">
+								%
+							</span>
+						</div>
+					</div>
+
+					{/* Initial Liquidity */}
+					<div>
+						<label htmlFor="liquidity" className="block text-sm font-semibold leading-relaxed mb-2">
+							Initial Liquidity (BDAG)
+						</label>
+						<div className="relative">
+							<Input
+								id="liquidity"
+								type="number"
+								placeholder="0.00"
+								value={formData.liquidity}
+								onChange={handleChange}
+								onKeyDown={handleKeyDown}
+								min={100}
+								className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
+							/>
+						</div>
+					</div>
+				</div>
+
+				{/* Resolution Source */}
+				<div>
+					<label htmlFor="resolutionSource" className="block text-sm font-semibold leading-relaxed mb-2">
+						Resolution Source
 					</label>
 					<Input
-						id="liquidity"
-						type="number"
-						placeholder="Enter amount (e.g., 500)"
-						value={formData.liquidity} // Value from context state
+						id="resolutionSource"
+						placeholder="Coinbase API final price"
+						value={formData.resolutionSource || ""}
 						onChange={handleChange}
-						min={100}
+						onKeyDown={handleKeyDown}
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
+					/>
+				</div>
+
+				<div>
+					<label htmlFor="resolutionDate" className="block text-sm font-semibold leading-relaxed mb-2">
+						Resolution Source
+					</label>
+					<Input
+						id="resolutionDate"
+						placeholder="Add tag (comma"
+						value={formData.resolutionDate || ""}
+						onChange={handleChange}
+						onKeyDown={handleKeyDown}
+						className="bg-primary-darkBrown border-secondary-light text-white placeholder:text-secondary-light"
 					/>
 				</div>
 			</div>

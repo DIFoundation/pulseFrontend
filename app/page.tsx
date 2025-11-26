@@ -2,28 +2,18 @@ import { StatCard } from "@/components/StatCard"
 import { FeatureCard } from "@/components/FeatureCard"
 import { Stars } from "@/components/Stars"
 import { Button } from "@/components/ui/button"
-import {
-	TrendingUp,
-	Target,
-	Trophy,
-	Cloud,
-	Gamepad2,
-	Bitcoin,
-	Drama,
-	Landmark,
-	Grid3x3,
-	CircleCheckBig,
-} from "lucide-react"
+import { TrendingUp, Target, Trophy, CircleCheckBig } from "lucide-react"
 import { CategoryCard } from "@/components/CategoryCard"
+import Image from "next/image"
 
 const Page = () => {
 	return (
 		<div className="min-h-screen cosmic-gradient">
 			{/* <Navbar /> */}
 
-			<main className="pt-16">
+			<main className="pt-12">
 				{/* Hero Section */}
-				<section className="relative w-full py-20 md:py-32 overflow-hidden">
+				<section className="relative w-full py-16 overflow-hidden">
 					<Stars />
 					<div className="container mx-auto px-4 text-center relative z-20">
 						<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
@@ -42,17 +32,20 @@ const Page = () => {
 					</div>
 
 					{/* Horizon glow */}
-					<div
-						className="absolute bottom-0 left-0 w-full h-64 pointer-events-none z-10"
-						style={{
-							maskImage: "linear-gradient(to bottom, transparent, black 50%)",
-							WebkitMaskImage: "linear-gradient(to bottom, transparent, black 50%)",
-						}}>
-						<div className="horizon-glow"></div>
+					<div className="blur-xl container mb-0 -mt-10">
+						<div className="relative w-full h-[285px] ">
+							<Image
+								src="/gloww.png"
+								alt="gloww"
+								fill
+								className="object-contain"
+								sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px"
+							/>
+						</div>
 					</div>
 				</section>
 				{/* Why PulseDelta matters */}
-				<section className="container mx-auto px-4 py-16 bg-transparent border-none border-transparent">
+				<section className="container mx-auto px-4 py-16 bg-transparent border-none border-transparent -mt-20">
 					<div className="text-center mb-12">
 						<h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why PulseDelta Matters</h2>
 						<p className="text-muted-foreground">See how PulseDelta gets you from guess to reward.</p>
@@ -82,40 +75,36 @@ const Page = () => {
 							<h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
 								Why PulseDelta Matters
 							</h2>
-							<p className="text-muted-foreground">
-								Turning everyday questions into earning opportunities.
-							</p>
+							<p className="text-foreground">Turning everyday questions into earning opportunities.</p>
 						</div>
 
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
-							<div className="text-center">
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
+							<div className="p-4 text-center hover:border hover:border-primary hover:bg-secondary-dark transition-colors duration-300 rounded-lg hover:shadow-primary-light shadow-md">
 								<div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
 									<CircleCheckBig className="w-6 h-6" />
 								</div>
 								<h3 className="text-lg font-semibold text-foreground mb-2">Accurate Oracles</h3>
-								<p className="text-sm text-muted-foreground">
-									Reliable data sources for market resolution.
-								</p>
+								<p className="text-sm text-foreground">Reliable data sources for market resolution.</p>
 							</div>
-							<div className="text-center">
+							<div className="p-4 text-center hover:border hover:border-primary hover:bg-secondary-dark transition-colors duration-300 rounded-lg hover:shadow-primary-light shadow-md">
 								<div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
 									<CircleCheckBig className="w-6 h-6" />
 								</div>
 								<h3 className="text-lg font-semibold text-foreground mb-2">Instant Payouts</h3>
-								<p className="text-sm text-muted-foreground">Rewards distributed automatically.</p>
+								<p className="text-sm text-foreground">Rewards distributed automatically.</p>
 							</div>
-							<div className="text-center">
+							<div className="p-4 text-center hover:border hover:border-primary hover:bg-secondary-dark transition-colors duration-300 rounded-lg hover:shadow-primary-light shadow-md">
 								<div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
 									<CircleCheckBig className="w-6 h-6" />
 								</div>
 								<h3 className="text-lg font-semibold text-foreground mb-2">Fun & Engaging</h3>
-								<p className="text-sm text-muted-foreground">
+								<p className="text-sm text-foreground">
 									Compete, predict, and learn with the community.
 								</p>
 							</div>
 						</div>
 
-						<div className="text-center">
+						<div className="text-center mt-4">
 							<Button size="lg" className="px-8">
 								Get Started
 							</Button>
@@ -128,16 +117,16 @@ const Page = () => {
 					<div className="container mx-auto px-4 py-16 pb-24">
 						<div className="text-center mb-12">
 							<h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Market Categories</h2>
-							<p className="text-muted-foreground">Find the right market for your next prediction.</p>
+							<p className="text-foreground font-thin">Find the right market for your next prediction.</p>
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-							<CategoryCard icon={<Cloud className="text-primary w-9 h-9" />} label="Weather" />
-							<CategoryCard icon={<Gamepad2 className="text-primary w-9 h-9" />} label="Sport" />
-							<CategoryCard icon={<Bitcoin className="text-primary w-9 h-9" />} label="Crypto" />
-							<CategoryCard icon={<Drama className="text-primary w-9 h-9" />} label="Entertainment" />
-							<CategoryCard icon={<Landmark className="text-primary w-9 h-9" />} label="Politics" />
-							<CategoryCard icon={<Grid3x3 className="text-primary w-9 h-9" />} label="Others" />
+							<CategoryCard iconUrl={"/weather.png"} label="Weather" />
+							<CategoryCard iconUrl={"/sports.png"} label="Sport" />
+							<CategoryCard iconUrl={"/crypto.png"} label="Crypto" />
+							<CategoryCard iconUrl={"/entertainment.png"} label="Entertainment" />
+							<CategoryCard iconUrl={"/politics.png"} label="Politics" />
+							<CategoryCard iconUrl={"/others.png"} label="Others" />
 						</div>
 					</div>
 				</section>

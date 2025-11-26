@@ -15,6 +15,10 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["Poppins", "sans-serif"],
+				poppins: ["Poppins", "sans-serif"],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -27,11 +31,14 @@ module.exports = {
 					gray: "hsl(var(--primary-gray))",
 					light: "hsl(var(--primary-light))",
 					dark: "hsl(var(--primary-dark))",
+					brown: "hsl(var(--primary-brown))",
+					darkBrown: "hsl(var(--primary-darkBrown))",
 				},
 				secondary: {
 					DEFAULT: "hsl(var(--secondary))",
 					foreground: "hsl(var(--secondary-foreground))",
 					light: "hsl(var(--secondary-light))",
+					dark: "hsl(var(--secondary-dark))",
 				},
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",

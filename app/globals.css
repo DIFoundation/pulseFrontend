@@ -73,12 +73,16 @@
         --primary-light: 28, 84%, 73%;
         /*Dark orange  */
         --primary-dark: 25, 100%, 42%;
+        /*brownish orange  */
+        --primary-brown: 21, 57%, 9%;
+        --primary-darkBrown: 0, 14%, 4%;
         /*White color*/
         --primary-foreground: 0 0% 100%;
         /* Whitish gray */
         --primary-foreground-gray: 0 0% 59%;
         --secondary: 0 0% 10%;
         --secondary-light: 0 0% 12%;
+        --secondary-dark: 0 0% 0%;
         --secondary-foreground: 0 0% 98%;
         --muted: 0 0% 12%;
         --muted-foreground: 0 0% 65%;

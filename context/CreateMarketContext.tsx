@@ -4,17 +4,22 @@ import React, { useState, useMemo, createContext, useCallback } from "react"
 export const MARKET_STEPS: MarketStep[] = [
 	{ id: 1, title: "Market Category", description: "Select the best structure for your prediction market." },
 	{ id: 2, title: "Market Type", description: "Select the outcome format for your prediction market." },
-	{ id: 3, title: "Market Details", description: "Input the specifics of your prediction question and parameters." },
+	{
+		id: 3,
+		title: "Market Details",
+		description: "Provide clear and specific information about your prediction market",
+	},
 	{ id: 4, title: "Review & Deploy", description: "Final check before deploying your immutable market." },
 ]
 export const TOTAL_STEPS = MARKET_STEPS.length
 
 export const initialFormData: MarketFormData = {
+	marketCategory: "",
 	marketType: "binary",
 	question: "",
 	description: "",
 	tradingFee: 0.5,
-	liquidity: 500,
+	liquidity: 100,
 }
 
 // Create the Context, initialized to undefined
@@ -29,56 +34,43 @@ export const CreateMarketProvider: React.FC<{ children: React.ReactNode }> = ({ 
 		setFormData((prev) => ({ ...prev, [field]: value }))
 	}, [])
 
-	// 2. Stabilize handleNext (Dependencies: [currentStep, formData.question, formData.liquidity])
+	// 2. FIX: Remove formData dependencies and add better logging
 	const handleNext = useCallback(() => {
-		console.log(`${currentStep}/${TOTAL_STEPS} `)
+		setCurrentStep((prev) => {
+			console.log(`[handleNext] Current step: ${prev}, Total steps: ${TOTAL_STEPS}`)
 
-		// if (currentStep === 2) {
-		// 	// --- Validation for Step 2 ---
+			if (prev < TOTAL_STEPS) {
+				console.log(`[handleNext] Moving to step ${prev + 1}`)
+				return prev + 1
+			}
 
-		// 	// 2a. Check if question is present and non-empty (string check)
-		// 	if (!formData.question || String(formData.question).trim() === "") {
-		// 		console.error("Validation failed: Market Question cannot be empty.")
-		// 		return
-		// 	}
+			console.log(`[handleNext] Already at final step, staying at ${prev}`)
+			return prev
+		})
+	}, [])
 
-		// 	// 2b. Check liquidity (must be non-empty and a positive number)
-		// 	const liquidityValue = formData.liquidity
-
-		// 	// Check if input is empty (the component now passes "" for empty input)
-		// 	if (liquidityValue === "") {
-		// 		console.error("Validation failed: Initial Liquidity cannot be empty.")
-		// 		return
-		// 	}
-
-		// 	// Check if it's a valid positive number (handles 0, negatives, non-finite numbers)
-		// 	const liquidityValid = Number.isFinite(Number(liquidityValue)) && Number(liquidityValue) > 0
-		// 	if (!liquidityValid) {
-		// 		console.error("Validation failed: Initial Liquidity must be a positive number.")
-		// 		return
-		// 	}
-		// }
-
-		if (currentStep < TOTAL_STEPS) {
-			setCurrentStep((prev) => prev + 1)
-		}
-	}, [currentStep, formData.question, formData.liquidity])
-
-	// 3. Stabilize handleBack (Dependencies: [currentStep])
+	// 3. Stabilize handleBack
 	const handleBack = useCallback(() => {
-		if (currentStep > 1) {
-			setCurrentStep((prev) => prev - 1)
-		}
-	}, [currentStep])
+		setCurrentStep((prev) => {
+			console.log(`[handleBack] Current step: ${prev}`)
+			if (prev > 1) {
+				console.log(`[handleBack] Moving to step ${prev - 1}`)
+				return prev - 1
+			}
+			return prev
+		})
+	}, [])
 
-	// 4. Stabilize handleSubmit (Dependencies: [formData])
+	// 4. Handle final submission (should only be called from step 4)
 	const handleSubmit = useCallback(
 		(e: React.FormEvent) => {
 			e.preventDefault()
+			console.log("[handleSubmit] Deploying market with data:", formData)
 
-			console.log("Submitting form data:", formData)
 			//Our deployment logic here
+			// TODO: Add your blockchain deployment logic
 
+			// Reset form after successful deployment
 			setFormData(initialFormData)
 			setCurrentStep(1)
 		},

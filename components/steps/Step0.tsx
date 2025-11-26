@@ -1,37 +1,34 @@
 import React from "react"
-import { Bitcoin, CloudSun, Drama, Grid, Volleyball, Vote } from "lucide-react"
+
 import { useCreateMarket } from "@/hooks/useCreateMarket"
 import { MarketCategoryCard } from "../form/MarketCategoryCard"
 
-const Step0_CategorySeclection: React.FC = () => {
+const Step0_CategorySelection: React.FC = () => {
 	const { formData, handleFormChange } = useCreateMarket()
 
 	const categoryTypes = [
-		{ key: "weather", title: "Weather", icon: <CloudSun /> },
-		{ key: "entertainment", title: "Entertainment", icon: <Drama /> },
-		{ key: "sport", title: "Sport", icon: <Volleyball /> },
-		{ key: "politics", title: "Politics", icon: <Vote /> },
-		{ key: "crypto", title: "Crypto", icon: <Bitcoin /> },
-		{ key: "others", title: "Others", icon: <Grid /> },
+		{ key: "weather", title: "Weather", iconUrl: "/weather.png" },
+		{ key: "entertainment", title: "Entertainment", iconUrl: "/entertainment.png" },
+		{ key: "sport", title: "Sport", iconUrl: "/sports.png" },
+		{ key: "politics", title: "Politics", iconUrl: "/politics.png" },
+		{ key: "crypto", title: "Crypto", iconUrl: "/crypto.png" },
+		{ key: "others", title: "Others", iconUrl: "/others.png" },
 	]
 
-	const onSelectType = (type: string) => {
-		handleFormChange("marketType", type)
+	const onSelectCategory = (category: string) => {
+		handleFormChange("marketCategory", category)
 	}
 
 	return (
-		<div className="container p-4">
-			<div className="title">
-				<h2>Choose Market Category</h2>
-			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-0 pt-4">
+		<div className="w-full max-w-3xl mx-auto">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{categoryTypes.map((type) => (
 					<MarketCategoryCard
 						key={type.key}
-						icon={type.icon}
+						iconUrl={type.iconUrl}
 						title={type.title}
-						isSelected={formData.marketType === type.key}
-						onClick={() => onSelectType(type.key)}
+						isSelected={formData.marketCategory === type.key}
+						onClick={() => onSelectCategory(type.key)}
 					/>
 				))}
 			</div>
@@ -39,4 +36,4 @@ const Step0_CategorySeclection: React.FC = () => {
 	)
 }
 
-export default Step0_CategorySeclection
+export default Step0_CategorySelection
