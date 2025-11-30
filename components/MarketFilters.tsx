@@ -3,25 +3,10 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { useMemo } from "react"
 import { ChevronDown } from "lucide-react"
+import { statusCategories, typeCategories } from "@/data/constants"
+import { MarketFiltersProps } from "@/types/types"
 
-const statusCategories = [
-	{ id: "trending", label: "Trending" },
-	{ id: "ending-soon", label: "Ending Soon" },
-	{ id: "high-value", label: "High Value" },
-	{ id: "newest", label: "Newest" },
-	{ id: "closed", label: "Closed" },
-]
-
-const typeCategories = ["All Market", "Crypto", "Entertainment", "Sports", "Politics", "Other"]
-
-interface Props {
-	activeStatus: string
-	onStatusChange: (status: string) => void
-	activeType: string
-	onTypeChange: (type: string) => void
-}
-
-export default function MarketFilters({ activeStatus, onStatusChange, activeType, onTypeChange }: Props) {
+export default function MarketFilters({ activeStatus, onStatusChange, activeType, onTypeChange }: MarketFiltersProps) {
 	const orderedTypes = useMemo(() => {
 		return [activeType, ...typeCategories.filter((t) => t !== activeType)]
 	}, [activeType])

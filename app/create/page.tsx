@@ -4,56 +4,126 @@ import { ChevronsRight } from "lucide-react"
 import { ProgressBar } from "@/components/form/ProgressBar"
 import { Button } from "@/components/ui/button"
 import { useCreateMarket } from "@/hooks/useCreateMarket"
-import Step1_TypeSelection from "@/components/steps/Step1"
-import Step2_MarketDetails from "@/components/steps/Step2"
-import Step3_Review from "@/components/steps/Step3"
-import Step0_CategorySeclection from "@/components/steps/Step0"
+import Step0_CategorySelection from "@/components/steps/Step0_CategorySelection"
+import Step1_TypeSelection from "@/components/steps/Step1_TypeSelection"
+import Step2_MarketDetails from "@/components/steps/Step2_MarketDetails"
+import Step2_Outcomes from "@/components/steps/Step2_Outcomes"
+import Step4_Review from "@/components/steps/Step4_Review"
 
 const CreateMarket: React.FC = () => {
 	const { currentStep, totalSteps, marketSteps, formData, handleNext, handleBack, handleSubmit } = useCreateMarket()
 
-	const currentStepData = useMemo(
-		() => marketSteps.find((step) => step.id === currentStep),
-		[currentStep, marketSteps]
-	)
+	const currentStepData = useMemo(() => {
+		const isMultiOutcome = formData.marketType === "multi"
+
+		// Manually map step data based on current step and market type
+		if (isMultiOutcome) {
+			switch (currentStep) {
+				case 1:
+					return {
+						title: "Market Category",
+						description: "Select the best structure for your prediction market.",
+					}
+				case 2:
+					return {
+						title: "Market Type",
+						description: "Select the outcome format for your prediction market.",
+					}
+				case 3:
+					return {
+						title: "Market Details",
+						description: "Provide clear and specific information about your prediction market",
+					}
+				case 4:
+					return { title: "Market Outcomes", description: "Define the possible outcomes for your market." }
+				case 5:
+					return {
+						title: "Review & Deploy",
+						description: "Final check before deploying your immutable market.",
+					}
+				default:
+					return { title: "", description: "" }
+			}
+		} else {
+			switch (currentStep) {
+				case 1:
+					return {
+						title: "Market Category",
+						description: "Select the best structure for your prediction market.",
+					}
+				case 2:
+					return {
+						title: "Market Type",
+						description: "Select the outcome format for your prediction market.",
+					}
+				case 3:
+					return {
+						title: "Market Details",
+						description: "Provide clear and specific information about your prediction market",
+					}
+				case 4:
+					return {
+						title: "Review & Deploy",
+						description: "Final check before deploying your immutable market.",
+					}
+				default:
+					return { title: "", description: "" }
+			}
+		}
+	}, [currentStep, formData.marketType])
 
 	// Validation function for each step
 	const isStepValid = useMemo(() => {
+		// For multi-outcome markets, adjust step numbers
+		const isMultiOutcome = formData.marketType === "multi"
+
 		switch (currentStep) {
 			case 1: // Step 0: Category Selection
-				// marketCategory must be selected
 				return formData.marketCategory !== "" && formData.marketCategory !== undefined
 
 			case 2: // Step 1: Market Type Selection
-				// marketType must be selected
 				return formData.marketType !== "" && formData.marketType !== undefined
 
-			case 3: // Step 2: Market Details
-				// Question, liquidity, and resolution sources are required
-				const hasQuestion = formData.question && formData.question.trim() !== ""
-				const hasValidLiquidity = formData.liquidity && Number(formData.liquidity) >= 100
-				const hasResolutionSource = formData.resolutionSource && formData.resolutionSource.trim() !== ""
-				const hasResolutionDate = formData.resolutionDate && formData.resolutionDate.trim() !== ""
+			case 3: // Step 2: Market Details (for all types)
+				return (
+					formData.question &&
+					formData.question.trim() !== "" &&
+					formData.liquidity &&
+					Number(formData.liquidity) >= 100 &&
+					formData.resolutionSource &&
+					formData.resolutionSource.trim() !== "" &&
+					formData.resolutionDate &&
+					formData.resolutionDate.trim() !== ""
+				)
 
-				console.log("[Validation] Step 3:", {
-					question: formData.question,
-					hasQuestion,
-					liquidity: formData.liquidity,
-					hasValidLiquidity,
-					resolutionSource: formData.resolutionSource,
-					hasResolutionSource,
-					resolutionDate: formData.resolutionDate,
-					hasResolutionDate,
-					isValid: hasQuestion && hasValidLiquidity && hasResolutionSource && hasResolutionDate,
-				})
+			case 4: // Step 3: Outcomes (only for multi) OR Review (for binary/scalar)
+				if (isMultiOutcome) {
+					// This is Outcomes for multi-outcome - validate at least 2 outcomes
+					const validOutcomes = formData.outcomes?.filter((o) => o.option.trim() !== "") || []
+					return validOutcomes.length >= 2
+				} else {
+					// This is Review for binary/scalar - validate everything
+					return (
+						formData.marketCategory !== "" &&
+						formData.marketType !== "" &&
+						formData.question &&
+						formData.question.trim() !== "" &&
+						formData.liquidity &&
+						Number(formData.liquidity) >= 100 &&
+						formData.resolutionSource &&
+						formData.resolutionSource.trim() !== "" &&
+						formData.resolutionDate &&
+						formData.resolutionDate.trim() !== ""
+					)
+				}
 
-				return hasQuestion && hasValidLiquidity && hasResolutionSource && hasResolutionDate
-
-			case 4: // Step 3: Review
-				// All validations must pass
+			case 5: // Step 4: Review (only for multi-outcome)
+				// Final validation for multi-outcome markets
+				const validOutcomes = formData.outcomes?.filter((o) => o.option.trim() !== "") || []
 				return (
 					formData.marketCategory !== "" &&
 					formData.marketType !== "" &&
+					validOutcomes.length >= 2 &&
 					formData.question &&
 					formData.question.trim() !== "" &&
 					formData.liquidity &&
@@ -70,36 +140,52 @@ const CreateMarket: React.FC = () => {
 	}, [currentStep, formData])
 
 	const renderStepContent = () => {
-		switch (currentStep) {
-			case 1:
-				return <Step0_CategorySeclection />
-			case 2:
-				return <Step1_TypeSelection />
-			case 3:
-				return <Step2_MarketDetails />
-			case 4:
-				return <Step3_Review />
-			default:
-				return <div>Step not found.</div>
+		const isMultiOutcome = formData.marketType === "multi"
+
+		// Adjust rendering based on whether it's multi-outcome
+		if (isMultiOutcome) {
+			switch (currentStep) {
+				case 1:
+					return <Step0_CategorySelection />
+				case 2:
+					return <Step1_TypeSelection />
+				case 3:
+					return <Step2_MarketDetails />
+				case 4:
+					return <Step2_Outcomes />
+				case 5:
+					return <Step4_Review />
+				default:
+					return <div>Step not found.</div>
+			}
+		} else {
+			// Binary or Scalar - skip outcomes step
+			switch (currentStep) {
+				case 1:
+					return <Step0_CategorySelection />
+				case 2:
+					return <Step1_TypeSelection />
+				case 3:
+					return <Step2_MarketDetails />
+				case 4:
+					return <Step4_Review />
+				default:
+					return <div>Step not found.</div>
+			}
 		}
 	}
 
-	// FIX: Prevent default form submission behavior
 	const handleFormSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		e.stopPropagation()
 		console.log("[Page] Form submit triggered on step:", currentStep)
-
-		// Block any accidental form submissions (Enter key, etc.)
 		console.warn("[Page] Form submission blocked - use Deploy button only")
 	}
 
-	// Prevent the Next button from being called multiple times
 	const handleNextClick = (e: React.MouseEvent) => {
 		e.preventDefault()
 		e.stopPropagation()
 
-		// Validate before proceeding
 		if (!isStepValid) {
 			console.warn("[Page] Cannot proceed - step validation failed")
 			return
@@ -116,16 +202,13 @@ const CreateMarket: React.FC = () => {
 		handleBack()
 	}
 
-	// Handle the Deploy button click
 	const handleDeployClick = () => {
-		// Final validation check
 		if (!isStepValid) {
 			console.warn("[Page] Cannot deploy - validation failed")
 			return
 		}
 
 		console.log("[Page] Deploy button clicked - submitting form")
-		// Directly call handleSubmit with a synthetic event
 		const syntheticEvent = { preventDefault: () => {} } as React.FormEvent
 		handleSubmit(syntheticEvent)
 	}
@@ -138,8 +221,8 @@ const CreateMarket: React.FC = () => {
 						Create Prediction Market
 					</h1>
 					<p className="text-foreground mt-2 max-w-xl mx-auto">
-						Launch your own prediction market with out guided wizard. Choose from templates or creates
-						custom markets.
+						Launch your own prediction market with our guided wizard. Choose from templates or create custom
+						markets.
 					</p>
 				</div>
 
@@ -159,8 +242,7 @@ const CreateMarket: React.FC = () => {
 								<Button
 									type="button"
 									onClick={handleBackClick}
-									disabled={currentStep === 1}
-									className="bg-transparent border border-secondary-light text-foreground shadow-none disabled:opacity-30">
+									className="bg-transparent border border-secondary-light text-foreground shadow-none">
 									Previous
 								</Button>
 							)}

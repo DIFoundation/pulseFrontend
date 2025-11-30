@@ -1,7 +1,7 @@
 import { CreateMarketContextType, MarketFormData, MarketStep } from "@/types/types"
 import React, { useState, useMemo, createContext, useCallback } from "react"
 
-export const MARKET_STEPS: MarketStep[] = [
+export const BASE_MARKET_STEPS: MarketStep[] = [
 	{ id: 1, title: "Market Category", description: "Select the best structure for your prediction market." },
 	{ id: 2, title: "Market Type", description: "Select the outcome format for your prediction market." },
 	{
@@ -9,9 +9,9 @@ export const MARKET_STEPS: MarketStep[] = [
 		title: "Market Details",
 		description: "Provide clear and specific information about your prediction market",
 	},
-	{ id: 4, title: "Review & Deploy", description: "Final check before deploying your immutable market." },
+	{ id: 4, title: "Market Outcomes", description: "Define the possible outcomes for your market." }, // Conditional step - after details
+	{ id: 5, title: "Review & Deploy", description: "Final check before deploying your immutable market." },
 ]
-export const TOTAL_STEPS = MARKET_STEPS.length
 
 export const initialFormData: MarketFormData = {
 	marketCategory: "",
@@ -20,6 +20,13 @@ export const initialFormData: MarketFormData = {
 	description: "",
 	tradingFee: 0.5,
 	liquidity: 100,
+	resolutionSource: "",
+	resolutionDate: "",
+	// Multi-outcome specific fields
+	outcomes: [
+		{ id: "1", option: "", description: "" },
+		{ id: "2", option: "", description: "" },
+	],
 }
 
 // Create the Context, initialized to undefined
@@ -29,12 +36,31 @@ export const CreateMarketProvider: React.FC<{ children: React.ReactNode }> = ({ 
 	const [currentStep, setCurrentStep] = useState(1)
 	const [formData, setFormData] = useState<MarketFormData>(initialFormData)
 
-	// 1. Stabilize handleFormChange (Dependencies: [])
-	const handleFormChange = useCallback((field: keyof MarketFormData, value: string | number) => {
+	// Calculate steps dynamically based on market type
+	const marketSteps = useMemo(() => {
+		const steps = [...BASE_MARKET_STEPS]
+
+		// If not multi-outcome, remove the "Market Outcomes" step
+		if (formData.marketType !== "multi") {
+			return steps
+				.filter((step) => step.id !== 3)
+				.map((step, index) => ({
+					...step,
+					id: index + 1, // Reindex steps
+				}))
+		}
+
+		return steps
+	}, [formData.marketType])
+
+	const TOTAL_STEPS = marketSteps.length
+
+	// 1. Stabilize handleFormChange
+	const handleFormChange = useCallback((field: keyof MarketFormData, value: MarketFormData[keyof MarketFormData]) => {
 		setFormData((prev) => ({ ...prev, [field]: value }))
 	}, [])
 
-	// 2. FIX: Remove formData dependencies and add better logging
+	// 2. Handle Next with conditional step logic
 	const handleNext = useCallback(() => {
 		setCurrentStep((prev) => {
 			console.log(`[handleNext] Current step: ${prev}, Total steps: ${TOTAL_STEPS}`)
@@ -47,9 +73,9 @@ export const CreateMarketProvider: React.FC<{ children: React.ReactNode }> = ({ 
 			console.log(`[handleNext] Already at final step, staying at ${prev}`)
 			return prev
 		})
-	}, [])
+	}, [TOTAL_STEPS])
 
-	// 3. Stabilize handleBack
+	// 3. Handle Back with conditional step logic
 	const handleBack = useCallback(() => {
 		setCurrentStep((prev) => {
 			console.log(`[handleBack] Current step: ${prev}`)
@@ -61,14 +87,32 @@ export const CreateMarketProvider: React.FC<{ children: React.ReactNode }> = ({ 
 		})
 	}, [])
 
-	// 4. Handle final submission (should only be called from step 4)
+	// 4. Handle final submission
 	const handleSubmit = useCallback(
 		(e: React.FormEvent) => {
 			e.preventDefault()
 			console.log("[handleSubmit] Deploying market with data:", formData)
 
-			//Our deployment logic here
-			// TODO: Add your blockchain deployment logic
+			// Prepare data for blockchain
+			const marketData = {
+				category: formData.marketCategory,
+				type: formData.marketType,
+				question: formData.question,
+				description: formData.description,
+				tradingFee: formData.tradingFee,
+				liquidity: formData.liquidity,
+				resolutionSource: formData.resolutionSource,
+				resolutionDate: formData.resolutionDate,
+				// Only include outcomes for multi-outcome markets
+				...(formData.marketType === "multi" && {
+					outcomes: formData.outcomes?.filter((o) => o.option.trim() !== ""),
+				}),
+			}
+
+			console.log("[handleSubmit] Formatted market data:", marketData)
+
+			// TODO: Add your blockchain deployment logic here
+			// Example: await deployMarket(marketData)
 
 			// Reset form after successful deployment
 			setFormData(initialFormData)
@@ -82,13 +126,13 @@ export const CreateMarketProvider: React.FC<{ children: React.ReactNode }> = ({ 
 			formData,
 			currentStep,
 			totalSteps: TOTAL_STEPS,
-			marketSteps: MARKET_STEPS,
+			marketSteps,
 			handleFormChange,
 			handleNext,
 			handleBack,
 			handleSubmit,
 		}),
-		[formData, currentStep, handleFormChange, handleNext, handleBack, handleSubmit]
+		[formData, currentStep, TOTAL_STEPS, marketSteps, handleFormChange, handleNext, handleBack, handleSubmit]
 	)
 
 	return <CreateMarketContext.Provider value={contextValue}>{children}</CreateMarketContext.Provider>
