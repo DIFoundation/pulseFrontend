@@ -40,15 +40,41 @@ export default function TradeModal({ isOpen, onClose, market, selectedOutcome }:
 	const potentialReturn = amount ? (parseFloat(amount) * 1.95).toFixed(2) : "0.00"
 	const tradingFee = amount ? (parseFloat(amount) * 0.01).toFixed(2) : "0.00"
 
-	const colors = ["#EF4444", "#8B5CF6", "#22C55E", "#EC4899", "#F59E0B"]
+	const getOptionStyles = (index: number, optionName: string, isSelected: boolean) => {
+		const colors = [
+			{ bg: "bg-pink-500", border: "border-pink-500", text: "text-pink-500", hover: "hover:bg-pink-500/10" },
+			{
+				bg: "bg-purple-500",
+				border: "border-purple-500",
+				text: "text-purple-500",
+				hover: "hover:bg-purple-500/10",
+			},
+			{ bg: "bg-red-500", border: "border-red-500", text: "text-red-500", hover: "hover:bg-red-500/10" },
+			{ bg: "bg-green-500", border: "border-green-500", text: "text-green-500", hover: "hover:bg-green-500/10" },
+			{ bg: "bg-amber-500", border: "border-amber-500", text: "text-amber-500", hover: "hover:bg-amber-500/10" },
+		]
 
-	const getOptionColor = (index: number, optionName: string) => {
-		if (market.marketType === "multi") return colors[index % colors.length]
+		let theme = colors[index % colors.length]
+		const lower = optionName.toLowerCase()
+		if (lower === "yes" || lower === "long") theme = colors[3]
+		if (lower === "no" || lower === "short") theme = colors[2]
 
-		const name = optionName.toLowerCase()
-		if (name === "yes" || name === "long") return "#22c55e" // Green
-		if (name === "no" || name === "short") return "#ef4444" // Red
-		return colors[index % colors.length]
+		if (isSelected) {
+			return {
+				container: `${theme.bg} border-transparent`,
+				text: "text-white",
+				dot: "bg-white",
+				percentage: "text-white/90",
+			}
+		}
+
+		// Default / Hover State
+		return {
+			container: `bg-black border-white/10 hover:border-opacity-100 ${theme.hover} hover:${theme.border}`,
+			text: "text-white",
+			dot: theme.bg,
+			percentage: "text-gray-500 group-hover:text-gray-300",
+		}
 	}
 
 	return (
@@ -113,25 +139,25 @@ export default function TradeModal({ isOpen, onClose, market, selectedOutcome }:
 				<div className="space-y-3 mb-8 max-h-[240px] overflow-y-auto custom-scrollbar">
 					{outcomes.map((outcome, index) => {
 						const isSelected = internalSelection === outcome.option || internalSelection === outcome.id
-						const color = getOptionColor(index, outcome.option)
+						const styles = getOptionStyles(index, outcome.option, isSelected)
 
 						return (
 							<button
 								key={index}
 								onClick={() => setInternalSelection(outcome.option)}
 								className={cn(
-									"w-full flex items-center justify-between p-4 rounded-xl border transition-all",
-									isSelected
-										? "bg-white/5 border-white/20"
-										: "bg-black border-transparent hover:border-white/10"
+									"w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-200 group",
+									styles.container
 								)}>
 								<div className="flex items-center gap-3">
-									<div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
-									<span className={cn("font-medium", isSelected ? "text-white" : "text-gray-400")}>
+									<div className={cn("w-3 h-3 rounded-full transition-colors", styles.dot)} />
+									<span className={cn("font-medium transition-colors", styles.text)}>
 										{outcome.option}
 									</span>
 								</div>
-								<span className="text-sm font-bold text-gray-500">{outcome.percentage || 50}%</span>
+								<span className={cn("text-sm font-bold transition-colors", styles.percentage)}>
+									{outcome.percentage || 50}%
+								</span>
 							</button>
 						)
 					})}

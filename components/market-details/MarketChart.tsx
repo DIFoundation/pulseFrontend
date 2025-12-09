@@ -17,70 +17,40 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 export default function MarketChart({ market }: MarketChartProps) {
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
 
-	// Dynamic Logic for Chart Data
-	const getChartData = () => {
-		// Binary (Yes/No)
+	const getChartConfig = () => {
 		if (market.marketType === "binary") {
-			return {
-				labels: months,
-				datasets: [
-					{
-						label: "Yes",
-						data: months.map(() => 30 + Math.random() * 40),
-						borderColor: "#22C55E", // Green
-						backgroundColor: "rgba(34, 197, 94, 0.05)",
-						tension: 0.4,
-						borderWidth: 2,
-						pointRadius: 0,
-					},
-					{
-						label: "No",
-						data: months.map(() => 30 + Math.random() * 40),
-						borderColor: "#EF4444", // Red
-						backgroundColor: "rgba(239, 68, 68, 0.05)",
-						tension: 0.4,
-						borderWidth: 2,
-						pointRadius: 0,
-					},
-				],
-			}
+			return [
+				{ label: "Yes", color: "#22C55E" },
+				{ label: "No", color: "#EF4444" },
+			]
 		}
-
-		// Multi Outcome (Team A, B, C, D...)
 		if (market.marketType === "multi" && market.outcomes) {
-			// Colors matching Design 2: Pink, Purple, Red, Green
 			const outcomeColors = ["#EC4899", "#8B5CF6", "#EF4444", "#22C55E", "#F59E0B"]
-
-			return {
-				labels: months,
-				datasets: market.outcomes.map((outcome, index) => {
-					const color = outcomeColors[index % outcomeColors.length]
-					return {
-						label: outcome.option,
-						data: months.map(() => 15 + Math.random() * 30),
-						borderColor: color,
-						backgroundColor: "transparent",
-						tension: 0.4,
-						borderWidth: 2,
-						pointRadius: 0,
-					}
-				}),
-			}
+			return market.outcomes.map((outcome, index) => ({
+				label: outcome.option,
+				color: outcomeColors[index % outcomeColors.length],
+			}))
 		}
+		return [{ label: "Price", color: "#22C55E" }]
+	}
 
-		// Scalar (Long/Short) - usually one line or two diverging
+	const chartConfig = getChartConfig()
+
+	const getChartData = () => {
 		return {
 			labels: months,
-			datasets: [
-				{
-					label: "Price",
-					data: months.map(() => 40 + Math.random() * 30),
-					borderColor: "#22C55E",
-					backgroundColor: "rgba(34, 197, 94, 0.05)",
-					tension: 0.4,
-					fill: true,
-				},
-			],
+			datasets: chartConfig.map((item) => ({
+				label: item.label,
+				data: months.map(() => (market.marketType === "scalar" ? 40 : 15) + Math.random() * 30),
+				borderColor: item.color,
+				backgroundColor:
+					item.color.replace(")", ", 0.05)").replace("rgb", "rgba").replace("#", "") +
+					(item.color.startsWith("#") ? "10" : ""),
+				tension: 0.4,
+				borderWidth: 2,
+				pointRadius: 0,
+				fill: market.marketType !== "multi",
+			})),
 		}
 	}
 
@@ -89,15 +59,7 @@ export default function MarketChart({ market }: MarketChartProps) {
 		maintainAspectRatio: false,
 		plugins: {
 			legend: {
-				position: "top" as const,
-				align: "end" as const, // Align legend to right
-				labels: {
-					color: "#9CA3AF",
-					usePointStyle: true,
-					boxWidth: 8,
-					padding: 20,
-					font: { size: 12 },
-				},
+				display: false,
 			},
 			tooltip: {
 				mode: "index" as const,
@@ -133,11 +95,20 @@ export default function MarketChart({ market }: MarketChartProps) {
 	}
 
 	return (
-		<div className="bg-[#111111] border border-white/5 rounded-2xl p-6 w-full h-full min-h-[400px]">
+		<div className="bg-secondary-dark border border-secondary-light rounded-2xl p-6 w-full h-full min-h-[400px]">
 			<div className="flex justify-between items-center mb-6">
 				<h2 className="text-lg font-medium text-gray-200">Price Movement</h2>
-				{/* Legend is handled by ChartJS, but we could put custom HTML legend here if needed */}
+
+				<div className="flex items-center gap-4">
+					{chartConfig.map((item, index) => (
+						<div key={index} className="flex items-center gap-2">
+							<div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
+							<span className="text-xs font-medium text-gray-400">{item.label}</span>
+						</div>
+					))}
+				</div>
 			</div>
+
 			<div className="h-[300px] w-full">
 				<Line data={getChartData()} options={options} />
 			</div>

@@ -29,7 +29,7 @@ export default function MarketStats({ market }: MarketStatsProps) {
 			{stats.map((stat, index) => (
 				<div
 					key={index}
-					className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center text-center h-[110px]">
+					className="bg-secondary-dark border border-secondary-light rounded-2xl p-6 flex flex-col items-center justify-center text-center h-[110px]">
 					<span className="text-gray-400 text-sm mb-1">{stat.label}</span>
 					<p className="text-xl font-bold text-white tracking-wide">
 						{stat.value}{" "}
