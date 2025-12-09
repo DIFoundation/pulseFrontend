@@ -1,6 +1,5 @@
 import { MarketChartProps } from "@/types/types"
 import { Line } from "react-chartjs-2"
-import { useState } from "react"
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -16,106 +15,74 @@ import {
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler)
 
 export default function MarketChart({ market }: MarketChartProps) {
-	const [chartData] = useState(() => {
-		const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
 
-		// Binary Market: Yes/No
+	// Dynamic Logic for Chart Data
+	const getChartData = () => {
+		// Binary (Yes/No)
 		if (market.marketType === "binary") {
-			const yesData = months.map(() => 30 + Math.random() * 40)
-			const noData = months.map(() => 30 + Math.random() * 40)
-
 			return {
 				labels: months,
 				datasets: [
 					{
 						label: "Yes",
-						data: yesData,
-						borderColor: "rgb(34, 197, 94)",
-						backgroundColor: "rgba(34, 197, 94, 0.1)",
+						data: months.map(() => 30 + Math.random() * 40),
+						borderColor: "#22C55E", // Green
+						backgroundColor: "rgba(34, 197, 94, 0.05)",
 						tension: 0.4,
-						fill: true,
+						borderWidth: 2,
+						pointRadius: 0,
 					},
 					{
 						label: "No",
-						data: noData,
-						borderColor: "rgb(239, 68, 68)",
-						backgroundColor: "rgba(239, 68, 68, 0.1)",
+						data: months.map(() => 30 + Math.random() * 40),
+						borderColor: "#EF4444", // Red
+						backgroundColor: "rgba(239, 68, 68, 0.05)",
 						tension: 0.4,
-						fill: true,
+						borderWidth: 2,
+						pointRadius: 0,
 					},
 				],
 			}
 		}
 
-		// Multi-Outcome Market: Multiple options
+		// Multi Outcome (Team A, B, C, D...)
 		if (market.marketType === "multi" && market.outcomes) {
-			const colors = [
-				{ border: "rgb(34, 197, 94)", bg: "rgba(34, 197, 94, 0.1)" },
-				{ border: "rgb(239, 68, 68)", bg: "rgba(239, 68, 68, 0.1)" },
-				{ border: "rgb(59, 130, 246)", bg: "rgba(59, 130, 246, 0.1)" },
-				{ border: "rgb(245, 158, 11)", bg: "rgba(245, 158, 11, 0.1)" },
-				{ border: "rgb(139, 92, 246)", bg: "rgba(139, 92, 246, 0.1)" },
-				{ border: "rgb(236, 72, 153)", bg: "rgba(236, 72, 153, 0.1)" },
-			]
+			// Colors matching Design 2: Pink, Purple, Red, Green
+			const outcomeColors = ["#EC4899", "#8B5CF6", "#EF4444", "#22C55E", "#F59E0B"]
 
 			return {
 				labels: months,
 				datasets: market.outcomes.map((outcome, index) => {
-					const color = colors[index % colors.length]
+					const color = outcomeColors[index % outcomeColors.length]
 					return {
 						label: outcome.option,
 						data: months.map(() => 15 + Math.random() * 30),
-						borderColor: color.border,
-						backgroundColor: color.bg,
+						borderColor: color,
+						backgroundColor: "transparent",
 						tension: 0.4,
-						fill: true,
+						borderWidth: 2,
+						pointRadius: 0,
 					}
 				}),
 			}
 		}
 
-		// Scalar Market: Single value line
-		if (market.marketType === "scalar") {
-			const priceData = months.map(() => 40 + Math.random() * 30)
-
-			return {
-				labels: months,
-				datasets: [
-					{
-						label: "Price",
-						data: priceData,
-						borderColor: "rgb(59, 130, 246)",
-						backgroundColor: "rgba(59, 130, 246, 0.1)",
-						tension: 0.4,
-						fill: true,
-					},
-				],
-			}
-		}
-
-		// Fallback to binary
+		// Scalar (Long/Short) - usually one line or two diverging
 		return {
 			labels: months,
 			datasets: [
 				{
-					label: "Yes",
-					data: months.map(() => 30 + Math.random() * 40),
-					borderColor: "rgb(34, 197, 94)",
-					backgroundColor: "rgba(34, 197, 94, 0.1)",
-					tension: 0.4,
-					fill: true,
-				},
-				{
-					label: "No",
-					data: months.map(() => 30 + Math.random() * 40),
-					borderColor: "rgb(239, 68, 68)",
-					backgroundColor: "rgba(239, 68, 68, 0.1)",
+					label: "Price",
+					data: months.map(() => 40 + Math.random() * 30),
+					borderColor: "#22C55E",
+					backgroundColor: "rgba(34, 197, 94, 0.05)",
 					tension: 0.4,
 					fill: true,
 				},
 			],
 		}
-	})
+	}
 
 	const options = {
 		responsive: true,
@@ -123,46 +90,39 @@ export default function MarketChart({ market }: MarketChartProps) {
 		plugins: {
 			legend: {
 				position: "top" as const,
+				align: "end" as const, // Align legend to right
 				labels: {
 					color: "#9CA3AF",
 					usePointStyle: true,
-					padding: 15,
+					boxWidth: 8,
+					padding: 20,
+					font: { size: 12 },
 				},
 			},
 			tooltip: {
 				mode: "index" as const,
 				intersect: false,
-				backgroundColor: "#1F2937",
-				titleColor: "#F3F4F6",
+				backgroundColor: "#18181B",
+				titleColor: "#FFFFFF",
 				bodyColor: "#D1D5DB",
-				borderColor: "#374151",
+				borderColor: "#27272A",
 				borderWidth: 1,
+				padding: 10,
 			},
 		},
 		scales: {
 			y: {
-				beginAtZero: true,
-				max: market.marketType === "scalar" ? undefined : 100,
-				ticks: {
-					color: "#6B7280",
-					callback: function (value: number | string) {
-						if (market.marketType === "scalar") {
-							return value
-						}
-						return value + "%"
-					},
-				},
+				border: { display: false },
 				grid: {
-					color: "#374151",
+					color: "rgba(255, 255, 255, 0.1)",
+					drawBorder: false,
 				},
+				ticks: { color: "#6B7280", font: { size: 10 } },
 			},
 			x: {
-				ticks: {
-					color: "#6B7280",
-				},
-				grid: {
-					display: false,
-				},
+				border: { display: false },
+				grid: { display: false },
+				ticks: { color: "#6B7280", font: { size: 10 } },
 			},
 		},
 		interaction: {
@@ -172,24 +132,14 @@ export default function MarketChart({ market }: MarketChartProps) {
 		},
 	}
 
-	const getChartTitle = () => {
-		switch (market.marketType) {
-			case "binary":
-				return "Price Movement"
-			case "multi":
-				return "Outcome Probabilities"
-			case "scalar":
-				return "Price History"
-			default:
-				return "Price Movement"
-		}
-	}
-
 	return (
-		<div className="bg-secondary-dark border border-secondary-light rounded-xl p-6">
-			<h2 className="text-xl font-bold text-white mb-4">{getChartTitle()}</h2>
-			<div className="h-[300px] md:h-[400px]">
-				<Line data={chartData} options={options} />
+		<div className="bg-[#111111] border border-white/5 rounded-2xl p-6 w-full h-full min-h-[400px]">
+			<div className="flex justify-between items-center mb-6">
+				<h2 className="text-lg font-medium text-gray-200">Price Movement</h2>
+				{/* Legend is handled by ChartJS, but we could put custom HTML legend here if needed */}
+			</div>
+			<div className="h-[300px] w-full">
+				<Line data={getChartData()} options={options} />
 			</div>
 		</div>
 	)

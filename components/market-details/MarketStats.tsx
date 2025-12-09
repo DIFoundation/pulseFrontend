@@ -1,39 +1,40 @@
 import { MarketStatsProps } from "@/types/types"
-import { ChartColumn, Clock5, Users, TrendingUp } from "lucide-react"
 
 export default function MarketStats({ market }: MarketStatsProps) {
 	const stats = [
 		{
-			icon: <ChartColumn className="w-5 h-5" />,
 			label: "Liquidity",
 			value: market.liquidity,
+			sub: "wDAG",
 		},
 		{
-			icon: <TrendingUp className="w-5 h-5" />,
 			label: "Volume",
 			value: market.volume,
+			sub: "wDAG",
 		},
 		{
-			icon: <Users className="w-5 h-5" />,
 			label: "Traders",
 			value: market.participants.toString(),
+			sub: null,
 		},
 		{
-			icon: <Clock5 className="w-5 h-5" />,
 			label: "Ends in",
 			value: market.duration,
+			sub: null,
 		},
 	]
 
 	return (
-		<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+		<div className="flex flex-col gap-4">
 			{stats.map((stat, index) => (
-				<div key={index} className="bg-secondary-dark border border-secondary-light rounded-xl p-4">
-					<div className="flex items-center gap-2 text-gray-400 mb-2">
-						{stat.icon}
-						<span className="text-sm">{stat.label}</span>
-					</div>
-					<p className="text-xl font-bold text-white">{stat.value}</p>
+				<div
+					key={index}
+					className="bg-[#111111] border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center text-center h-[110px]">
+					<span className="text-gray-400 text-sm mb-1">{stat.label}</span>
+					<p className="text-xl font-bold text-white tracking-wide">
+						{stat.value}{" "}
+						{stat.sub && <span className="text-base font-normal text-gray-500">{stat.sub}</span>}
+					</p>
 				</div>
 			))}
 		</div>

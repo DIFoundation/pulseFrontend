@@ -13,6 +13,8 @@ export const markets: Market[] = Array.from({ length: 100 }).map((_, idx) => {
 					{ id: "2", option: "Option B", percentage: 35 },
 					{ id: "3", option: "Option C", percentage: 20 },
 					{ id: "4", option: "Option D", percentage: 20 },
+					{ id: "5", option: "Option E", percentage: 20 },
+					{ id: "6", option: "Option F", percentage: 20 },
 			  ]
 			: undefined
 
