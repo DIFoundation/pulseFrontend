@@ -12,16 +12,18 @@ interface ActivityItemProps {
 
 export default function ActivityItem({ type, title, amount, time, status, isLast }: ActivityItemProps) {
 	const getIconConfig = () => {
+		if (status === "Failed") {
+			return {
+				icon: <X className="w-3 h-3 text-red-300" />,
+				bg: "bg-red-900",
+			}
+		}
+
 		switch (type) {
 			case "success":
 				return {
 					icon: <Check className="w-3 h-3 bg-green-300" />,
 					bg: "bg-green-900",
-				}
-			case "failed":
-				return {
-					icon: <X className="w-3 h-3 text-red-300" />,
-					bg: "bg-red-900",
 				}
 			case "create":
 				return {
@@ -33,8 +35,13 @@ export default function ActivityItem({ type, title, amount, time, status, isLast
 					icon: <ArrowUpRight className="w-3 h-3 text-green-300" />,
 					bg: "bg-green-900",
 				}
+			case "failed":
+				return {
+					icon: <X className="w-3 h-3 text-red-300" />,
+					bg: "bg-red-900",
+				}
 			default:
-				return { icon: <Check className="w-3 h-3" />, bg: "bg-green-500", shadow: "" }
+				return { icon: <Check className="w-3 h-3" />, bg: "bg-green-500" }
 		}
 	}
 
