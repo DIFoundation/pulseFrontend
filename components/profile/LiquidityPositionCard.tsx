@@ -19,7 +19,7 @@ export default function LiquidityPositionCard({ marketQuestion, lpTokens, value,
 
 				{/* Market Details */}
 				<div className="flex flex-col gap-1">
-					<h3 className="text-sm font-semibold text-white leading-tight max-w-[200px] sm:max-w-xs">
+					<h3 className="text-base font-medium text-white leading-tight max-w-[200px] sm:max-w-xs">
 						{marketQuestion}
 					</h3>
 					<span className="text-xs text-gray-500 font-mono">{lpTokens} LP tokens</span>
@@ -27,7 +27,7 @@ export default function LiquidityPositionCard({ marketQuestion, lpTokens, value,
 			</div>
 
 			<div className="flex flex-col gap-1 text-right">
-				<span className="text-sm font-bold text-white font-mono">{value}</span>
+				<span className="text-sm font-medium text-white font-mono">{value}</span>
 				<span className="text-xs text-gray-500">{feesEarned} fees earned</span>
 			</div>
 		</div>

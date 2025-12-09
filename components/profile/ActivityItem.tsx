@@ -15,27 +15,23 @@ export default function ActivityItem({ type, title, amount, time, status, isLast
 		switch (type) {
 			case "success":
 				return {
-					icon: <Check className="w-3 h-3" />,
-					bg: "bg-green-500",
-					shadow: "shadow-[0_0_10px_rgba(34,197,94,0.4)]",
+					icon: <Check className="w-3 h-3 bg-green-300" />,
+					bg: "bg-green-900",
 				}
 			case "failed":
 				return {
-					icon: <X className="w-3 h-3" />,
-					bg: "bg-red-500",
-					shadow: "shadow-[0_0_10px_rgba(239,68,68,0.4)]",
+					icon: <X className="w-3 h-3 text-red-300" />,
+					bg: "bg-red-900",
 				}
 			case "create":
 				return {
-					icon: <Plus className="w-3 h-3 text-black" />,
-					bg: "bg-yellow-500",
-					shadow: "shadow-[0_0_10px_rgba(234,179,8,0.4)]",
+					icon: <Plus className="w-3 h-3 text-yellow-300" />,
+					bg: "bg-yellow-900",
 				}
 			case "trade":
 				return {
-					icon: <ArrowUpRight className="w-3 h-3" />,
-					bg: "bg-green-500",
-					shadow: "shadow-[0_0_10px_rgba(34,197,94,0.4)]",
+					icon: <ArrowUpRight className="w-3 h-3 text-green-300" />,
+					bg: "bg-green-900",
 				}
 			default:
 				return { icon: <Check className="w-3 h-3" />, bg: "bg-green-500", shadow: "" }
@@ -50,19 +46,14 @@ export default function ActivityItem({ type, title, amount, time, status, isLast
 
 			{/* Icon Circle */}
 			<div className="relative z-10 flex-shrink-0 mt-1">
-				<div
-					className={cn(
-						"w-6 h-6 rounded-full flex items-center justify-center text-white",
-						config.bg,
-						config.shadow
-					)}>
+				<div className={cn("w-6 h-6 rounded-full flex items-center justify-center text-white", config.bg)}>
 					{config.icon}
 				</div>
 			</div>
 
 			{/* Content */}
 			<div className="flex flex-col pb-8">
-				<h4 className="text-sm font-semibold text-white mb-1 line-clamp-1">{title}</h4>
+				<h4 className="text-base font-semibold text-white mb-1 line-clamp-1">{title}</h4>
 				<div className="flex items-center gap-2 text-xs">
 					<span className="text-gray-400 font-mono">{amount}</span>
 					<span className="text-zinc-600">•</span>

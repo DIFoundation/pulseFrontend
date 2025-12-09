@@ -38,9 +38,9 @@ export default function ProfilePage() {
 	]
 
 	return (
-		<div className="min-h-screen bg-black text-white selection:bg-orange-500/30">
+		<div className="min-h-screen cosmic-gradient px-4">
 			{/* Header / Top Bar */}
-			<header className="container mx-auto px-4 pt-6 pb-2">
+			<header className="continer mx-auto px-4 pt-6 pb-2">
 				<div className="flex items-center justify-end">
 					<button className="p-2 text-gray-400 hover:text-white transition-colors relative">
 						<Bell className="w-6 h-6" />
@@ -50,8 +50,8 @@ export default function ProfilePage() {
 				</div>
 			</header>
 
-			<main className="container mx-auto pt-4 px-4 pb-20 max-w-7xl">
-				<div className="mb-12">
+			<main className="container mx-auto pt-4 px-4 pb-20 ">
+				<div className="pb-10 md:pb-12 border-b border-primary rounded-b-[40px] md:rounded-b-[60px] mb-12">
 					<ProfileStatsContainer>
 						{stats.map((stat, index) => (
 							<StatCard key={index} {...stat} />
@@ -60,8 +60,9 @@ export default function ProfilePage() {
 				</div>
 
 				{/* Main Content Grid */}
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-2">
-					<div className="bg-[#09090b] border border-white/5 rounded-2xl p-4 sm:p-6 min-h-[300px]">
+				<div className="grid grid-cols-3 gap-8 px-2">
+					<div className="bg-secondary-dark rounded-2xl p-4 sm:p-6 min-h-[300px] col-span-3">
+						<h2 className="font-bold text-xl text-primary-foreground mb-2">Liquidity Positions</h2>
 						{mockLiquidityPositions.length > 0 ? (
 							<div className="flex flex-col">
 								{mockLiquidityPositions.map((position) => (
@@ -77,7 +78,8 @@ export default function ProfilePage() {
 						) : null}
 					</div>
 
-					<div className="bg-[#09090b] border border-white/5 rounded-2xl p-4 sm:p-6 min-h-[300px]">
+					<div className="p-4 sm:p-6 min-h-[300px] col-span-3 md:col-span-2 lg:col-span-1 bg-secondary-dark rounded-2xl">
+						<h2 className="font-bold text-xl text-primary-foreground mb-2">Recent Activities</h2>
 						{mockActivities.length > 0 ? (
 							<div className="flex flex-col pt-2">
 								{mockActivities.map((activity, index) => (

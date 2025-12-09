@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 export default function ProfileStatsContainer({ children }: { children: ReactNode }) {
 	return (
 		<div className="relative w-full">
-			<div className="pb-10 md:pb-12 border-b border-primary rounded-b-[40px] md:rounded-b-[60px] px-2">
+			<div className="">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">{children}</div>
 			</div>
 
