@@ -55,17 +55,17 @@ const Page = () => {
 						<FeatureCard
 							icon={<Target className="w-8 h-8" />}
 							title="Choose a Market"
-							description="Browse different categories like crypto, sports, entertainment, weather, politics, and more. Each market presents unique real-world events."
+							description="Browse different categories like crypto, sports, entertainment, weather, politics, and more. Pick any question you want to predict on."
 						/>
 						<FeatureCard
 							icon={<TrendingUp className="w-8 h-8" />}
 							title="Make Your Prediction"
-							description="Place the outcome you believe will happen and place your stake. You participate in prediction markets utilizing blockchain transparency."
+							description="Elect the outcome you believe will happen and place your stake. Your prediction is locked in instantly and recorded on-chain for transparency."
 						/>
 						<FeatureCard
 							icon={<Trophy className="w-8 h-8" />}
 							title="Win Automatically"
-							description="When the event ends, trusted oracles verify the results. If your prediction is correct, rewards are distributed automatically, no manual claims."
+							description="When the event ends, trusted oracles verify the results. If your prediction is correct, your winnings are paid to your wallet instantly—no delays, no manual claims."
 						/>
 					</div>
 
