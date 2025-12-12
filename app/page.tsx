@@ -5,8 +5,17 @@ import { Button } from "@/components/ui/button"
 import { TrendingUp, CircleCheckBig, Sparkles, Telescope, ChevronsRight } from "lucide-react"
 import { CategoryCard } from "@/components/CategoryCard"
 import Image from "next/image"
+import { InfiniteCarousel } from "@/components/InfiniteCarousel"
 
 const Page = () => {
+	const categories = [
+		{ iconUrl: "/weather.png", label: "Weather" },
+		{ iconUrl: "/sports.png", label: "Sport" },
+		{ iconUrl: "/crypto.png", label: "Crypto" },
+		{ iconUrl: "/entertainment.png", label: "Entertainment" },
+		{ iconUrl: "/politics.png", label: "Politics" },
+		{ iconUrl: "/others.png", label: "Others" },
+	]
 	return (
 		<div className="min-h-screen cosmic-gradient">
 			{/* <Navbar /> */}
@@ -122,13 +131,16 @@ const Page = () => {
 							<p className="text-foreground font-thin">Find the right market for your next prediction.</p>
 						</div>
 
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-							<CategoryCard iconUrl={"/weather.png"} label="Weather" />
-							<CategoryCard iconUrl={"/sports.png"} label="Sport" />
-							<CategoryCard iconUrl={"/crypto.png"} label="Crypto" />
-							<CategoryCard iconUrl={"/entertainment.png"} label="Entertainment" />
-							<CategoryCard iconUrl={"/politics.png"} label="Politics" />
-							<CategoryCard iconUrl={"/others.png"} label="Others" />
+						<div className="w-full">
+							<InfiniteCarousel speed={40}>
+								{categories.map((cat, index) => (
+									<li key={index} className="list-none">
+										<div className="w-[280px] sm:w-[350px]">
+											<CategoryCard iconUrl={cat.iconUrl} label={cat.label} className="" />
+										</div>
+									</li>
+								))}
+							</InfiniteCarousel>
 						</div>
 					</div>
 				</section>
