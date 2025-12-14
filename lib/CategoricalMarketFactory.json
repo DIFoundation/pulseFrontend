@@ -1,0 +1,336 @@
+contract Address=0x42957B36F5623912dED1a0A16bba3dad22E571C9
+
+[
+    {
+      "type": "constructor",
+      "inputs": [
+        { "name": "_marketImplementation", "type": "address", "internalType": "address" },
+        { "name": "_collateralToken", "type": "address", "internalType": "address" },
+        { "name": "_feeManager", "type": "address", "internalType": "address" },
+        { "name": "_socialPredictions", "type": "address", "internalType": "address" },
+        { "name": "_oracleResolver", "type": "address", "internalType": "address" },
+        { "name": "_admin", "type": "address", "internalType": "address" }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "MAX_OUTCOMES",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "MIN_INITIAL_LIQUIDITY",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "MIN_MARKET_DURATION",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "admin",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "allMarkets",
+      "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "collateralToken",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "createMarket",
+      "inputs": [
+        { "name": "metadataURI", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "numOutcomes", "type": "uint256", "internalType": "uint256" },
+        { "name": "resolutionTime", "type": "uint256", "internalType": "uint256" },
+        { "name": "initialLiquidity", "type": "uint256", "internalType": "uint256" }
+      ],
+      "outputs": [
+        { "name": "market", "type": "address", "internalType": "address" },
+        { "name": "outcomeTokenAddr", "type": "address", "internalType": "address" },
+        { "name": "lpTokenAddr", "type": "address", "internalType": "address" }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "feeManager",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getActiveMarkets",
+      "inputs": [],
+      "outputs": [{ "name": "markets", "type": "address[]", "internalType": "address[]" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getAllMarkets",
+      "inputs": [],
+      "outputs": [{ "name": "markets", "type": "address[]", "internalType": "address[]" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getFactoryConfig",
+      "inputs": [],
+      "outputs": [
+        { "name": "_marketImplementation", "type": "address", "internalType": "address" },
+        { "name": "_collateralToken", "type": "address", "internalType": "address" },
+        { "name": "_feeManager", "type": "address", "internalType": "address" },
+        { "name": "_socialPredictions", "type": "address", "internalType": "address" },
+        { "name": "_oracleResolver", "type": "address", "internalType": "address" },
+        { "name": "_admin", "type": "address", "internalType": "address" }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getLPToken",
+      "inputs": [{ "name": "market", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "lpToken", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getMarketCount",
+      "inputs": [],
+      "outputs": [{ "name": "count", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getMarketSummaries",
+      "inputs": [
+        { "name": "offset", "type": "uint256", "internalType": "uint256" },
+        { "name": "limit", "type": "uint256", "internalType": "uint256" }
+      ],
+      "outputs": [
+        {
+          "name": "summaries",
+          "type": "tuple[]",
+          "internalType": "struct CategoricalMarketFactory.MarketSummary[]",
+          "components": [
+            { "name": "market", "type": "address", "internalType": "address" },
+            { "name": "outcomeToken", "type": "address", "internalType": "address" },
+            { "name": "lpToken", "type": "address", "internalType": "address" },
+            { "name": "metadataURI", "type": "bytes32", "internalType": "bytes32" },
+            { "name": "numOutcomes", "type": "uint256", "internalType": "uint256" },
+            { "name": "resolutionTime", "type": "uint256", "internalType": "uint256" },
+            { "name": "status", "type": "uint8", "internalType": "enum CategoricalMarket.MarketStatus" },
+            { "name": "totalLiquidity", "type": "uint256", "internalType": "uint256" },
+            { "name": "prices", "type": "uint256[]", "internalType": "uint256[]" }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getMarketSummary",
+      "inputs": [{ "name": "market", "type": "address", "internalType": "address" }],
+      "outputs": [
+        {
+          "name": "summary",
+          "type": "tuple",
+          "internalType": "struct CategoricalMarketFactory.MarketSummary",
+          "components": [
+            { "name": "market", "type": "address", "internalType": "address" },
+            { "name": "outcomeToken", "type": "address", "internalType": "address" },
+            { "name": "lpToken", "type": "address", "internalType": "address" },
+            { "name": "metadataURI", "type": "bytes32", "internalType": "bytes32" },
+            { "name": "numOutcomes", "type": "uint256", "internalType": "uint256" },
+            { "name": "resolutionTime", "type": "uint256", "internalType": "uint256" },
+            { "name": "status", "type": "uint8", "internalType": "enum CategoricalMarket.MarketStatus" },
+            { "name": "totalLiquidity", "type": "uint256", "internalType": "uint256" },
+            { "name": "prices", "type": "uint256[]", "internalType": "uint256[]" }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getMarketsByStatus",
+      "inputs": [{ "name": "status", "type": "uint8", "internalType": "enum CategoricalMarket.MarketStatus" }],
+      "outputs": [{ "name": "markets", "type": "address[]", "internalType": "address[]" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getOutcomeToken",
+      "inputs": [{ "name": "market", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "outcomeToken", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getRecentMarkets",
+      "inputs": [{ "name": "count", "type": "uint256", "internalType": "uint256" }],
+      "outputs": [{ "name": "markets", "type": "address[]", "internalType": "address[]" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "isMarket",
+      "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "marketImplementation",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "marketToLPToken",
+      "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "marketToOutcomeToken",
+      "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "oracleResolver",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setAdmin",
+      "inputs": [{ "name": "newAdmin", "type": "address", "internalType": "address" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setOracle",
+      "inputs": [{ "name": "newOracle", "type": "address", "internalType": "address" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "socialPredictions",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "transferOwnership",
+      "inputs": [{ "name": "newOwner", "type": "address", "internalType": "address" }],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "AdminUpdated",
+      "inputs": [
+        { "name": "oldAdmin", "type": "address", "indexed": true, "internalType": "address" },
+        { "name": "newAdmin", "type": "address", "indexed": true, "internalType": "address" }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "MarketCreated",
+      "inputs": [
+        { "name": "market", "type": "address", "indexed": true, "internalType": "address" },
+        { "name": "metadataURI", "type": "bytes32", "indexed": true, "internalType": "bytes32" },
+        { "name": "numOutcomes", "type": "uint256", "indexed": false, "internalType": "uint256" },
+        { "name": "resolutionTime", "type": "uint256", "indexed": false, "internalType": "uint256" },
+        { "name": "creator", "type": "address", "indexed": true, "internalType": "address" }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OracleUpdated",
+      "inputs": [
+        { "name": "oldOracle", "type": "address", "indexed": true, "internalType": "address" },
+        { "name": "newOracle", "type": "address", "indexed": true, "internalType": "address" }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OwnershipTransferred",
+      "inputs": [
+        { "name": "previousOwner", "type": "address", "indexed": true, "internalType": "address" },
+        { "name": "newOwner", "type": "address", "indexed": true, "internalType": "address" }
+      ],
+      "anonymous": false
+    },
+    { "type": "error", "name": "FailedDeployment", "inputs": [] },
+    {
+      "type": "error",
+      "name": "InsufficientBalance",
+      "inputs": [
+        { "name": "balance", "type": "uint256", "internalType": "uint256" },
+        { "name": "needed", "type": "uint256", "internalType": "uint256" }
+      ]
+    },
+    { "type": "error", "name": "InsufficientCollateral", "inputs": [] },
+    { "type": "error", "name": "InsufficientLiquidity", "inputs": [] },
+    { "type": "error", "name": "InvalidAddress", "inputs": [] },
+    { "type": "error", "name": "InvalidOutcomeCount", "inputs": [] },
+    { "type": "error", "name": "InvalidParameter", "inputs": [] },
+    { "type": "error", "name": "OnlyAdmin", "inputs": [] },
+    {
+      "type": "error",
+      "name": "OwnableInvalidOwner",
+      "inputs": [{ "name": "owner", "type": "address", "internalType": "address" }]
+    },
+    {
+      "type": "error",
+      "name": "OwnableUnauthorizedAccount",
+      "inputs": [{ "name": "account", "type": "address", "internalType": "address" }]
+    }
+  ]
