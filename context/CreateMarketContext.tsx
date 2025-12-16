@@ -1,3 +1,4 @@
+'use client'
 import { CreateMarketContextType, MarketFormData, MarketStep } from "@/types/types"
 import React, { useState, useMemo, createContext, useCallback } from "react"
 
