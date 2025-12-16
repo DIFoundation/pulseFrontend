@@ -35,6 +35,8 @@
 		"sonner": "^1.7.4",
 		"tailwind-merge": "^2.6.0",
 		"tailwindcss-animate": "^1.0.7",
+		"tap": "^21.5.0",
+		"tape": "^5.9.0",
 		"viem": "^2.42.1",
 		"wagmi": "^3.1.0"
 	},

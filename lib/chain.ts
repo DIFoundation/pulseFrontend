@@ -10,11 +10,8 @@ export const blockdagPrimordial = {
   },
   rpcUrls: {
     default: {
-      http: ['https://rpc.primordial.bdagscan.com','https://relay.awakening.bdagscan.com'],
-    },
-    public: {
-      http: ['https://rpc.primordial.bdagscan.com','https://relay.awakening.bdagscan.com'],
-    },
+      http: ['https://relay.awakening.bdagscan.com'],
+    }
   },
   blockExplorers: {
     default: {
